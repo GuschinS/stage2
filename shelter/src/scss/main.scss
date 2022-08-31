@@ -1,9 +1,15 @@
-@import './components/button';
+@use "components/button";
+@use "normalize";
 
-$bgcolor: aquamarine;
+$bg-color: rgb(5, 122, 168);
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 body {
-    background-color: $bgcolor;
+    background-color: $bg-color;
     display: flex;
     align-items: center;
     justify-content: center;
