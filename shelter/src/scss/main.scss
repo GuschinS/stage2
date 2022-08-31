@@ -3,9 +3,10 @@
 
 $color-primary: #f1cdb3;
 $color-light-xl: #ffffff;
+$color-light-s: #fafafa;
 $color-dark-s: #cdcdcd;
-$font-georgia: Georgia, serif;
-$font-arial: Arial, sans-serif;
+$font-georgia: Georgia, "Times New Roman", Times, serif;
+$font-arial: Arial, Helvetica, sans-serif;
 
 * {
     box-sizing: border-box;
@@ -57,14 +58,18 @@ header {
         li {
             width: 115px;
             text-align: center;
-            .active {
-                border-bottom: 3px solid $color-primary;
+        }
+        .active {
+            border-bottom: 3px solid $color-primary;
+            padding-bottom: 5px;
+            a {
+                color: $color-light-s;
             }
         }
         a {
+            font-family: $font-arial;
             color: #cdcdcd;
             text-decoration: none;
-            padding-bottom: 3px;
         }
     }
 }
