@@ -92,19 +92,18 @@ header {
 }
 .about-content {
     display: flex;
-    // justify-content: space-evenly;
+    justify-content: space-evenly;
     margin-top: 80px;
 
     .about-pets {
         width: 300px;
         height: 408px;
         background-image: url("../assets/img/about-pets.jpg");
-        margin-left: 12.9vw;
     }
     .content {
         width: 430px;
         height: 380px;
-        margin-left: 8.8vw;
+        margin-left: -4.1vw;
     }
     h3 {
         color: $color-dark-l;
