@@ -13,7 +13,8 @@ body {
         url("../assets/img/start-screen-background.jpg");
     background-repeat: no-repeat, no-repeat;
     max-width: 1280px;
-    padding: 60px 40px 0;
+    // padding: 60px 40px 0;
+    padding-top: 60px;
     margin: 0 auto;
 }
 
@@ -21,6 +22,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 40px;
     .logo {
         display: flex;
         align-items: center;
@@ -67,8 +69,8 @@ header {
     background-image: url("../assets/svg/start-screen-puppy.svg");
     background-repeat: no-repeat;
     background-position: right;
-    height: 728px;
-    margin-top: 46px;
+    height: 729px;
+    margin: 46px 40px 0;
     .content {
         position: relative;
         top: 165px;
@@ -78,7 +80,7 @@ header {
     h2 {
         color: $color-light-xl;
         @include h2;
-        padding-right: 50px;
+        padding-right: 4vw;
     }
     p {
         color: $color-dark-s;
@@ -88,12 +90,9 @@ header {
 }
 
 .about {
-    // height: 588px;
-}
-.about-content {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 80px;
+    margin: 79px 40px 0;
 
     .about-pets {
         width: 300px;
@@ -117,5 +116,57 @@ header {
         color: $color-dark-xl;
         @include paragraph-l;
         margin-bottom: 25px;
+    }
+}
+
+.pets {
+    // position: relative;
+    // z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // width: 1280px;
+    background-color: $color-light-l;
+    margin: 101px auto 0;
+    .slider {
+        display: flex;
+        width: 98%;
+        height: auto;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .cards {
+        display: flex;
+        margin-top: 23px;
+        width: 79%;
+        height: auto;
+        justify-content: space-between;
+    }
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 270px;
+        height: 435px;
+    }
+    h3 {
+        width: 400px;
+        color: $color-dark-l;
+        @include h3;
+        margin-top: 81px;
+        text-align: center;
+    }
+    span {
+        color: $color-dark-3xl;
+        font-family: "Georgia";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 23px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.06em;
+        margin: 30px 0;
     }
 }

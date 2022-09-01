@@ -22,3 +22,51 @@
     letter-spacing: 0.06em;
     cursor: pointer;
 }
+
+.card button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 30px;
+    width: 187px;
+    height: 52px;
+    border: 2px solid $color-primary;
+    border-radius: 100px;
+    color: $color-dark-3xl;
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+
+.button-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 23px 19px;
+    width: 52px;
+    height: 52px;
+    border: 2px solid $color-primary;
+    border-radius: 100px;
+    position: relative;
+    top: 12px;
+}
+
+.get-know {
+    padding: 15px 30px;
+    width: 261px;
+    height: 52px;
+    background: $color-primary;
+    border-radius: 100px;
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+    border: none;
+    margin: 60px auto 100px;
+}
