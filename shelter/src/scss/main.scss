@@ -86,3 +86,37 @@ header {
         margin-top: 40px;
     }
 }
+
+.about {
+    // height: 588px;
+}
+.about-content {
+    display: flex;
+    // justify-content: space-evenly;
+    margin-top: 80px;
+
+    .about-pets {
+        width: 300px;
+        height: 408px;
+        background-image: url("../assets/img/about-pets.jpg");
+        margin-left: 12.9vw;
+    }
+    .content {
+        width: 430px;
+        height: 380px;
+        margin-left: 8.8vw;
+    }
+    h3 {
+        color: $color-dark-l;
+        @include h3;
+        margin-top: 16px;
+        margin-bottom: 24px;
+        line-height: 129%;
+        padding-right: 2vw;
+    }
+    p {
+        color: $color-dark-xl;
+        @include paragraph-l;
+        margin-bottom: 25px;
+    }
+}
