@@ -120,12 +120,9 @@ header {
 }
 
 .pets {
-    // position: relative;
-    // z-index: 20;
     display: flex;
     flex-direction: column;
     align-items: center;
-    // width: 1280px;
     background-color: $color-light-l;
     margin: 101px auto 0;
     .slider {
@@ -148,6 +145,9 @@ header {
         align-items: center;
         width: 270px;
         height: 435px;
+        background-color: $color-light-s;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
     }
     h3 {
         width: 400px;
@@ -156,6 +156,12 @@ header {
         margin-top: 81px;
         text-align: center;
     }
+
+    img {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
     span {
         color: $color-dark-3xl;
         font-family: "Georgia";
