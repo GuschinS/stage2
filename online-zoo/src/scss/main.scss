@@ -1,0 +1,8 @@
+@use "base/normalize";
+@import "abstracts/_text-styles";
+@import "abstracts/_color-styles";
+
+* {
+    box-sizing: border-box;
+    font-family: $font-georgia;
+}
