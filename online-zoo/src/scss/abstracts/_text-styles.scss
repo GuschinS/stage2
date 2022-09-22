@@ -1,19 +1,19 @@
 @font-face {
     font-family: "Roboto-Light";
-    src: local("../assets/fonts/Roboto-Light.ttf");
+    src: url("../assets/fonts/Roboto-Light.ttf");
 }
 
 @font-face {
     font-family: "Roboto-Medium";
-    src: local("../assets/fonts/Roboto-Medium.ttf");
+    src: url("../assets/fonts/Roboto-Medium.ttf");
 }
 @font-face {
     font-family: "Roboto-Regular";
-    src: local("../assets/fonts/Roboto-Regular.ttf");
+    src: url("../assets/fonts/Roboto-Regular.ttf");
 }
 @font-face {
     font-family: "Roboto-Bold";
-    src: local("../assets/fonts/Roboto-Bold.ttf");
+    src: url("../assets/fonts/Roboto-Bold.ttf");
 }
 
 $font-roboto: "Roboto", sans-serif;
@@ -22,89 +22,24 @@ $font-roboto: "Roboto", sans-serif;
     font-family: "Roboto-Bold";
     font-style: normal;
     font-weight: 700;
-    font-size: 106.496px;
+    font-size: 106.5px;
+
     line-height: 75%;
 }
 
-// @mixin h3 {
-//     font-family: "Georgia";
-//     font-style: normal;
-//     font-weight: 400;
-//     font-size: 35px;
-//     line-height: 130%;
-//     letter-spacing: 0.06em;
-// }
+@mixin logo {
+    font-family: "Roboto-Light";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 120%;
+}
 
-// @mixin h3-mobile {
-//     font-family: "Georgia";
-//     font-style: normal;
-//     font-weight: 400;
-//     font-size: 25px;
-//     line-height: 130%;
-//     letter-spacing: 0.06em;
-// }
-
-// @mixin h4 {
-//     font-family: "Georgia";
-//     font-style: normal;
-//     font-weight: 400;
-//     font-size: 20px;
-//     line-height: 115%;
-//     letter-spacing: 0.06em;
-// }
-// @mixin h5 {
-//     font-family: "Georgia";
-//     font-style: normal;
-//     font-weight: 400;
-//     font-size: 15px;
-//     line-height: 110%;
-//     letter-spacing: 0.06em;
-// }
-
-// @mixin h5-modal-window {
-//     font-family: "Georgia";
-//     font-style: normal;
-//     font-weight: 400;
-//     font-size: 15px;
-//     line-height: 110%;
-//     letter-spacing: 0.06em;
-// }
-
-// @mixin paragraph-l {
-//     font-family: "Arial";
-//     font-size: 15px;
-//     line-height: 160%;
-// }
-
-// @mixin paragraph-s {
-//     font-family: "Arial";
-//     font-style: italic;
-//     font-weight: 400;
-//     font-size: 12px;
-//     line-height: 150%;
-// }
-
-// @mixin paragraph-mobile-menu {
-//     font-family: "Arial";
-//     font-style: normal;
-//     font-weight: 400;
-//     font-size: 32px;
-//     line-height: 160%;
-// }
-
-// @mixin logo_title {
-//     font-family: "Georgia";
-//     font-style: normal;
-//     font-weight: 400;
-//     font-size: 32px;
-//     line-height: 110%;
-//     letter-spacing: 0.06em;
-//     // color: #c4c4c4;
-// }
-
-// @mixin logo_subtitle {
-//     font-family: "Arial";
-//     font-size: 13px;
-//     line-height: 15px;
-//     letter-spacing: 0.1em;
-// }
+@mixin light {
+    font-family: "Roboto-Light";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    color: #ffffff;
+}
