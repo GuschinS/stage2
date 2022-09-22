@@ -1,14 +1,14 @@
 @use "base/normalize";
-@import "abstracts/_text-styles";
-@import "abstracts/_color-styles";
+@import "abstracts/text-styles";
+@import "abstracts/color-styles";
+@import "layout/header";
+@import "layout/animal";
 
 * {
     box-sizing: border-box;
-    font-family: $font-roboto;
 }
 
 body {
     max-width: 1600px;
     margin: 0 auto;
-    background-color: $color-gray-light;
 }
