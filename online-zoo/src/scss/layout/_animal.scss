@@ -1,0 +1,37 @@
+@import "../abstracts/text-styles";
+@import "../abstracts/color-styles";
+@import "../components/button";
+
+.animal {
+    background-image: url(../assets/images/panda.jpg);
+    height: 780px;
+    margin-top: -80px;
+    .ellipse {
+        position: absolute;
+        right: 20.5%;
+        top: 92px;
+        width: 465px;
+        height: 465px;
+        border-radius: 230px;
+        background: $gradient-orange;
+    }
+    .text {
+        position: absolute;
+        width: 500px;
+        height: 400px;
+        right: 14%;
+        top: 167px;
+        text-align: center;
+        color: #ffffff;
+        padding-left: 7px;
+        p {
+            margin: 0;
+            @include h1;
+        }
+        h2 {
+            margin: 0;
+            @include h1;
+            color: $color-yellow;
+        }
+    }
+}
