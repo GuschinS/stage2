@@ -1,0 +1,57 @@
+@import "../abstracts/text-styles";
+@import "../abstracts/color-styles";
+
+header {
+    height: 80px;
+    background: #000000;
+    backdrop-filter: blur(2px);
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 72.5%;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .logo-nav {
+        display: flex;
+        align-items: center;
+    }
+    h1 {
+        width: 82px;
+        padding-top: 4px;
+        background-image: url(../assets/svg/bamboo.svg);
+        background-repeat: no-repeat;
+        background-position: bottom 6px left 10px;
+        text-align: center;
+        border: 1.18841px solid #ffffff;
+        @include logo;
+    }
+    a {
+        color: #ffffff;
+    }
+}
+
+ul {
+    display: flex;
+    margin-left: -0.7%;
+    li {
+        width: 96px;
+        text-align: center;
+        a {
+            @include light;
+        }
+        &:nth-child(5) {
+            width: 116px;
+        }
+        &:nth-child(3) a {
+            margin-left: -9px;
+        }
+        &:nth-child(5) a {
+            margin-left: 35px;
+        }
+    }
+    .active a {
+        color: $color-orange;
+    }
+}
