@@ -2,17 +2,10 @@
 @import "../abstracts/_color-styles";
 
 button {
-    position: absolute;
-    width: 298px;
-    height: 54px;
-    left: calc(50% - 298px / 2 + 332px);
-    top: 626px;
-    background: $gradient-orange;
     border-radius: 25px;
     text-transform: uppercase;
     text-align: center;
     border: none;
-    // padding-left: 11px;
     cursor: pointer;
     transition-duration: 300ms;
     @include medium;
