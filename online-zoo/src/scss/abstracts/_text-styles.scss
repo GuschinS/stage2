@@ -1,45 +1,101 @@
 @font-face {
-    font-family: "Roboto-Light";
+    font-family: "Roboto-300";
     src: url("../assets/fonts/Roboto-Light.ttf");
 }
 
 @font-face {
-    font-family: "Roboto-Medium";
-    src: url("../assets/fonts/Roboto-Medium.ttf");
-}
-@font-face {
-    font-family: "Roboto-Regular";
+    font-family: "Roboto-400";
     src: url("../assets/fonts/Roboto-Regular.ttf");
 }
+
 @font-face {
-    font-family: "Roboto-Bold";
+    font-family: "Roboto-500";
+    src: url("../assets/fonts/Roboto-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Roboto-700";
     src: url("../assets/fonts/Roboto-Bold.ttf");
 }
 
 $font-roboto: "Roboto", sans-serif;
 
 @mixin h1 {
-    font-family: "Roboto-Bold";
+    font-family: "Roboto-700";
     font-style: normal;
     font-weight: 700;
     font-size: 106.5px;
-
     line-height: 75%;
+}
+@mixin h2 {
+    font-family: "Roboto-400";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+}
+
+@mixin h3-36 {
+    font-family: "Roboto-400";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+}
+
+@mixin h3 {
+    font-family: "Roboto-400";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+}
+
+@mixin p {
+    font-family: "Roboto-400";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
 }
 
 @mixin logo {
-    font-family: "Roboto-Light";
+    font-family: "Roboto-400";
     font-style: normal;
     font-weight: 400;
     font-size: 19px;
     line-height: 120%;
 }
 
-@mixin light {
-    font-family: "Roboto-Light";
+@mixin medium {
+    font-family: "Roboto-500";
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 16px;
     line-height: 140%;
-    color: #ffffff;
+}
+
+@mixin description {
+    font-family: "Roboto-300";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 120%;
+}
+
+@mixin description_h3 {
+    font-family: "Roboto-500";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    text-transform: uppercase;
+}
+
+@mixin feed_p {
+    font-family: "Roboto-400";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
 }

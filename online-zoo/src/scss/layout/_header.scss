@@ -9,7 +9,8 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 72.5%;
+        // width: 72.5%;
+        width: 1160px;
         height: 100%;
         margin: 0 auto;
     }
@@ -30,6 +31,10 @@ header {
     a {
         color: #ffffff;
     }
+    p {
+        @include medium;
+        color: #ffffff;
+    }
 }
 
 ul {
@@ -39,7 +44,8 @@ ul {
         width: 96px;
         text-align: center;
         a {
-            @include light;
+            @include medium;
+            color: #ffffff;
         }
         &:nth-child(5) {
             width: 116px;

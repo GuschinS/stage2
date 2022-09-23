@@ -22,7 +22,7 @@
         right: 14%;
         top: 167px;
         text-align: center;
-        color: #ffffff;
+        color: $color-white;
         padding-left: 7px;
         p {
             margin: 0;
@@ -33,5 +33,14 @@
             @include h1;
             color: $color-yellow;
         }
+    }
+    button {
+        position: absolute;
+        width: 298px;
+        height: 54px;
+        left: calc(50% - 298px / 2 + 332px);
+        top: 626px;
+        background: $gradient-orange;
+        color: $color-white;
     }
 }
