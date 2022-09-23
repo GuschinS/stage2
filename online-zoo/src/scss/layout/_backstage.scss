@@ -20,6 +20,7 @@
     .text {
         grid-area: 1 / 2 / 2 / 3;
         padding-left: 20%;
+        color: $color-black-blue;
         h2 {
             @include h2;
             margin: 0;
@@ -41,9 +42,9 @@
     }
     .flower {
         position: absolute;
-        width: 293px;
+        width: 204px;
         height: 605px;
-        right: -5.5%;
+        right: 0%;
         top: 792px;
         background-image: url(../assets/images/flower_foto1.png);
         background-repeat: no-repeat;
