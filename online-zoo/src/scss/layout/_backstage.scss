@@ -7,9 +7,10 @@
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    width: 72.5%;
+    // width: 72.5%;
+    width: 1160px;
     height: 403px;
-    margin: 140px auto;
+    margin: 140px auto 180px;
     .photo {
         background-image: url(../assets/images/bamboo-cap.jpg);
         background-repeat: no-repeat;
