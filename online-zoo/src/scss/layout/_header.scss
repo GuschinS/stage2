@@ -30,6 +30,9 @@ header {
     a {
         color: #ffffff;
     }
+    p {
+        @include medium;
+    }
 }
 
 ul {
@@ -39,7 +42,7 @@ ul {
         width: 96px;
         text-align: center;
         a {
-            @include light;
+            @include medium;
         }
         &:nth-child(5) {
             width: 116px;
