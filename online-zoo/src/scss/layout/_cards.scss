@@ -6,13 +6,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 1108px;
+    height: 1106px;
     button {
         width: 298px;
         height: 54px;
         margin-top: 80px;
         padding-right: 2px;
         background-color: $color-orange-light;
+        color: $color-white;
     }
     .palm {
         position: absolute;
