@@ -35,6 +35,14 @@ $font-roboto: "Roboto", sans-serif;
     line-height: 120%;
 }
 
+@mixin h3-36 {
+    font-family: "Roboto-400";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+}
+
 @mixin h3 {
     font-family: "Roboto-400";
     font-style: normal;
@@ -65,7 +73,6 @@ $font-roboto: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 140%;
-    color: #ffffff;
 }
 
 @mixin description {
@@ -83,4 +90,12 @@ $font-roboto: "Roboto", sans-serif;
     font-size: 16px;
     line-height: 140%;
     text-transform: uppercase;
+}
+
+@mixin feed_p {
+    font-family: "Roboto-400";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
 }

@@ -1,0 +1,136 @@
+@import "../abstracts/_text-styles";
+@import "../abstracts/_color-styles";
+@import "../components/button";
+
+.feed-friend {
+    display: flex;
+    max-width: 100%;
+    height: 1004px;
+    margin: 0 auto;
+    background: linear-gradient(
+            315.75deg,
+            rgba(254, 210, 144, 0.7) 30.06%,
+            #febdab 100.95%,
+            rgba(254, 210, 144, 0.7) 106.36%
+        ),
+        linear-gradient(
+            315.75deg,
+            rgba(254, 189, 171, 0.74) 30.06%,
+            rgba(243, 169, 248, 0.66) 50.74%,
+            #e0d8f0 80.49%,
+            #eaf7fe 127.9%,
+            #eaf7fe 149.54%
+        ),
+        linear-gradient(
+            315.75deg,
+            rgba(254, 189, 171, 0.74) 30.06%,
+            rgba(243, 169, 248, 0.66) 50.74%,
+            #e0d8f0 80.49%,
+            #eaf7fe 127.9%,
+            #eaf7fe 149.54%
+        );
+    opacity: 0.9;
+}
+
+.container-feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1160px;
+    height: 835px;
+    background: rgba(253, 253, 255, 0.52);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    margin: 69px auto 100px;
+    h2 {
+        @include h2;
+        color: $color-orange-light;
+        margin-bottom: 0;
+    }
+    .text {
+        padding-left: 40px;
+        color: $color-black-blue;
+        h3 {
+            @include h3;
+            margin: 33px 0;
+        }
+        .medium {
+            @include medium;
+            padding-top: 12px;
+        }
+        p {
+            @include p;
+            margin-top: -6px;
+        }
+        span {
+            border-bottom: solid 1px;
+            border-bottom-color: $color-orange-light;
+            padding-bottom: 1px;
+        }
+    }
+    h3 {
+        @include h3-36;
+        color: $color-black-blue;
+        margin-top: 45px;
+    }
+    .feed-cards {
+        display: flex;
+        justify-content: space-between;
+        width: 764px;
+        height: 244px;
+        padding-top: 1px;
+        .feed-card {
+            width: 168px;
+            height: 168px;
+            border: solid 1px;
+            border-radius: 5px;
+            border-color: $color-orange-light;
+            background-color: $color-white;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        p {
+            padding-top: 17px;
+            @include feed_p;
+            color: $color-black-blue;
+        }
+        .one {
+            width: 168px;
+            &::after {
+                content: url(../assets/svg/arrow.svg);
+                position: relative;
+                left: 197px;
+                bottom: 177px;
+            }
+            .feed-card {
+                background-image: url(../assets/svg/pay.svg);
+            }
+        }
+        .two {
+            width: 168px;
+            &::after {
+                content: url(../assets/svg/arrow.svg);
+                position: relative;
+                left: 197px;
+                bottom: 204px;
+            }
+            .feed-card {
+                background-image: url(../assets/svg/zoo.svg);
+            }
+        }
+        .three {
+            width: 168px;
+            .feed-card {
+                background-image: url(../assets/svg/monkey.svg);
+            }
+        }
+    }
+    button {
+        width: 298px;
+        height: 54px;
+        background: $gradient-orange;
+        margin-top: 63px;
+        padding-right: 2px;
+        color: $color-white;
+    }
+}
