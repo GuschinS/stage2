@@ -7,13 +7,12 @@
 @import "layout/cards";
 @import "layout/feed-friend";
 @import "layout/footer";
+@import "layout/testimonials";
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    max-width: 1600px;
-    margin: 0 auto;
     overflow-x: hidden;
 }
