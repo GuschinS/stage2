@@ -29,7 +29,12 @@ header {
         @include logo;
     }
     a {
-        color: #ffffff;
+        color: $color-white;
+        transition: color 500ms;
+        &:hover {
+            color: $color-orange-light;
+            transition: color 500ms;
+        }
     }
     p {
         @include medium;
@@ -45,7 +50,12 @@ ul {
         text-align: center;
         a {
             @include medium;
-            color: #ffffff;
+            color: $color-white;
+            transition: color 500ms;
+            &:hover {
+                color: $color-orange-light;
+                transition: color 500ms;
+            }
         }
         &:nth-child(5) {
             width: 116px;
