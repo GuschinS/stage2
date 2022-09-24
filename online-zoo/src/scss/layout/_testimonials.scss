@@ -53,9 +53,9 @@
         bottom: 0;
         width: 298px;
         height: 54px;
-        border-radius: 0;
+        border-radius: 5px;
         color: $color-white;
-        background-color: $color-orange;
+        background: $gradient-orange;
     }
     .leaf {
         position: absolute;
@@ -73,11 +73,8 @@
     width: 1160px;
     height: 391px;
     .testimonials-card {
-        width: 268px;
+        width: 266px;
         height: 391px;
-        // background: linear-gradient($color-gray-light, $color-gray-light) padding-box, $gradient-pink border-box;
-        // border: 2px solid transparent;
-        // border-radius: 20px;
     }
     .one {
         background-image: url(../assets/images/testimonials-one.jpg);
