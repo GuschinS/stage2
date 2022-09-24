@@ -1,7 +1,136 @@
 @import "../abstracts/_text-styles";
 @import "../abstracts/_color-styles";
+@import "../components/button";
 
 footer {
     height: 443px;
     background: #111115;
+}
+
+.wrapper-footer {
+    display: flex;
+    width: 1160px;
+    margin: 0 auto;
+    padding-top: 24px;
+    // .one {
+    //     margin-top: 24px;
+    // }
+    h2 {
+        width: 82px;
+        padding-bottom: 4px;
+        background-image: url(../assets/svg/bamboo.svg);
+        background-repeat: no-repeat;
+        background-position: bottom 6px left 10px;
+        text-align: center;
+        border: 1.18841px solid #ffffff;
+        @include logo;
+    }
+    a {
+        color: $color-white;
+        transition: color 500ms;
+        &:hover {
+            color: $color-orange-light;
+            transition: color 500ms;
+        }
+    }
+    button {
+        width: 298px;
+        height: 54px;
+        color: $color-white;
+        background: $gradient-orange;
+        border-radius: 5px;
+        margin-top: 53px;
+        transition-duration: 300ms;
+        &:hover {
+            box-shadow: 0px 5px 10px 2px rgba(250, 250, 250, 0.4);
+            transition-duration: 300ms;
+        }
+    }
+    .social {
+        display: flex;
+        flex-direction: column;
+        margin-top: 32px;
+        a {
+            margin-top: 10px;
+            transition: transform 500ms;
+            &:hover {
+                transform: scale(1.05);
+                transition: transform 500ms;
+            }
+        }
+    }
+    .facebook {
+        width: 111px;
+        height: 26px;
+        background-image: url(../assets/svg/facebook.svg);
+        background-repeat: no-repeat;
+    }
+    .twitter {
+        width: 111px;
+        height: 26px;
+        background-image: url(../assets/svg/twitter.svg);
+        background-repeat: no-repeat;
+    }
+    .instagram {
+        width: 111px;
+        height: 26px;
+        background-image: url(../assets/svg/instagram.svg);
+        background-repeat: no-repeat;
+    }
+    .youtube {
+        width: 111px;
+        height: 26px;
+        background-image: url(../assets/svg/youtube.svg);
+        background-repeat: no-repeat;
+    }
+    .two {
+        display: flex;
+        align-items: flex-end;
+        width: 790px;
+        height: 385px;
+        padding-left: 38px;
+        li:nth-child(4) {
+            width: 100px;
+            padding-left: 21px;
+        }
+    }
+    .three .email {
+        color: $color-white;
+        @include h3;
+    }
+    form {
+        margin-top: 16px;
+        .submit {
+            width: 129px;
+            height: 42px;
+            color: $color-green;
+            background: $color-gray-light;
+            border: 1px solid $color-green;
+            border-radius: 5px;
+            margin-left: 7px;
+        }
+    }
+    .text-three {
+        position: relative;
+        top: 200px;
+        left: 139px;
+        color: $color-white;
+        @include text-three;
+        p {
+            margin-bottom: -5px;
+        }
+    }
+}
+#email {
+    width: 228px;
+    height: 42px;
+    border: solid 0.7px $color-orange;
+    margin-top: 13px;
+    color: #bdbdbd;
+    background-color: #111115;
+    &::placeholder {
+        color: #bdbdbd;
+        @include feed_p;
+        padding-left: 8px;
+    }
 }
