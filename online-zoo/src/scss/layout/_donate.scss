@@ -1,6 +1,7 @@
 @import "../abstracts/_text-styles";
 @import "../abstracts/_color-styles";
 @import "../components/input-radio";
+@import "../components/input-range";
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -16,7 +17,7 @@ input[type="number"] {
 
 .panda {
     width: 1600px;
-    height: 386px;
+    height: 385px;
     margin: 0 auto;
     background-image: url(../assets/images/panda_bg.jpg);
     background-repeat: no-repeat;
@@ -187,8 +188,9 @@ input[type="number"] {
         outline: none;
         -webkit-transition: 0.2s;
         transition: opacity 0.2s;
-        border: solid 12px #404950;
-        background-color: #72828e;
+        border-left: solid 11px #404950;
+        border-right: solid 14px #404950;
+        background-color: #404950;
         border-radius: 2px;
         &:hover {
             cursor: pointer;
@@ -202,9 +204,11 @@ input[type="number"] {
         background-image: url(../assets/svg/roller_icon.svg);
     }
     & ::-webkit-slider-runnable-track {
-        -webkit-appearance: none;
-        height: 60px;
+        // -webkit-appearance: none;
+        // width: 200px;
+        height: 42px;
     }
+
     .number {
         width: 268px;
         height: 54px;
@@ -212,6 +216,7 @@ input[type="number"] {
         border-radius: 2px;
         margin-top: 47px;
         padding-left: 5px;
+        background-color: transparent;
         &::placeholder {
             @include feed_p;
             color: #929699;

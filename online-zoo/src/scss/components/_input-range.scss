@@ -1,0 +1,25 @@
+#range-donate::before {
+    content: "";
+    position: absolute;
+    background: #72828e;
+    box-shadow: 0 1px 0 #72828e;
+    width: 915px;
+    height: 2px;
+    right: 125px;
+    bottom: 410px;
+    z-index: 1;
+}
+
+#range-donate::after {
+    content: "";
+    position: absolute;
+    background: $color-yellow;
+    width: 10px;
+    height: 10px;
+    left: 118px;
+    bottom: 406px;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 130px 0 0 $color-yellow, 260px 0 0 $color-yellow, 390px 0 0 $color-yellow, 520px 0 0 $color-yellow,
+        650px 0 0 $color-yellow, 780px 0 0 $color-yellow, 910px 0 0 $color-yellow;
+}
