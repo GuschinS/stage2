@@ -1,5 +1,6 @@
 @import "../abstracts/_text-styles";
 @import "../abstracts/_color-styles";
+@import "../components/button";
 @import "../components/input-radio";
 @import "../components/input-range";
 
@@ -16,8 +17,8 @@ input[type="number"] {
 }
 
 .panda {
-    width: 1600px;
-    height: 385px;
+    max-width: 1600px;
+    height: 386px;
     margin: 0 auto;
     background-image: url(../assets/images/panda_bg.jpg);
     background-repeat: no-repeat;
@@ -159,25 +160,6 @@ input[type="number"] {
             height: 20px;
             content: url(../assets/svg/dollar.svg);
         }
-        .button {
-            width: 298px;
-            height: 54px;
-            color: $color-white;
-            background: $gradient-orange;
-            border-radius: 25px;
-            text-transform: uppercase;
-            text-align: center;
-            border: none;
-            cursor: pointer;
-            transition-duration: 300ms;
-            @include medium;
-            margin-top: 30px;
-            margin-left: 8px;
-            &:hover {
-                box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.4);
-                transition-duration: 300ms;
-            }
-        }
     }
     .range-donate {
         margin: 3px 0 30px;
@@ -205,7 +187,6 @@ input[type="number"] {
     }
     & ::-webkit-slider-runnable-track {
         // -webkit-appearance: none;
-        // width: 200px;
         height: 42px;
     }
 
@@ -215,12 +196,20 @@ input[type="number"] {
         border: 1px solid #929699;
         border-radius: 2px;
         margin-top: 47px;
-        padding-left: 5px;
+        padding-left: 8px;
         background-color: transparent;
-        &::placeholder {
-            @include feed_p;
-            color: #929699;
-            padding-left: 4px;
+        color: #929699;
+        @include feed_p;
+        &:focus:required:invalid {
+            border: 1px solid $color-red;
+            color: $color-red;
+            &::placeholder {
+                color: $color-red;
+            }
+        }
+        &:focus:required {
+            border: 1px solid $color-green;
+            color: $color-green;
         }
     }
     .radio {
