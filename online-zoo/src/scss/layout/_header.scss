@@ -2,6 +2,7 @@
 @import "../abstracts/color-styles";
 
 header {
+    position: relative;
     height: 80px;
     background: #000000;
     backdrop-filter: blur(2px);
@@ -69,5 +70,10 @@ ul {
     }
     .active a {
         color: $color-orange;
+        cursor: default;
+
+        &:hover {
+            color: $color-orange;
+        }
     }
 }

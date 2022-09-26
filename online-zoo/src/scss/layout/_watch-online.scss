@@ -1,0 +1,10 @@
+@import "../abstracts/color-styles";
+
+.watch-online {
+    background-color: $color-black-blue;
+    .youtube {
+        display: flex;
+        margin: 0 auto;
+        border: 0;
+    }
+}

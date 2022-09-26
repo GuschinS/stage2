@@ -34,6 +34,10 @@ module.exports = {
       template: "./src/pages/donate/index.html",
       filename: "./donate.html",
     }),
+    new HtmlWebPackPlugin({
+      template: "./src/pages/watch-online/index.html",
+      filename: "./watch-online.html",
+    }),
   ],
   module: {
     rules: [
