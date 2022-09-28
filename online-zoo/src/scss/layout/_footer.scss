@@ -50,7 +50,7 @@ footer {
             margin-top: 10px;
             transition: transform 500ms;
             &:hover {
-                transform: scale(1.05);
+                filter: invert(33%) sepia(20%) saturate(1267%) hue-rotate(61deg) brightness(101%) contrast(101%);
                 transition: transform 500ms;
             }
         }
@@ -100,19 +100,11 @@ footer {
     .submit {
         width: 129px;
         height: 42px;
-        color: $color-green;
-        border: 1px solid $color-green;
+        color: $color-black;
+        border: 1px solid $color-black-blue;
         background: $color-gray-light;
         border-radius: 5px;
         margin-left: 6px;
-        // &:required:invalid {
-        //     color: $color-red;
-        //     border: 1px solid $color-red;
-        // }
-        // &:required {
-        //     color: $color-green;
-        //     border: 1px solid $color-green;
-        // }
     }
     .text-three {
         position: relative;
@@ -134,11 +126,13 @@ footer {
     background-color: #111115;
     padding-left: 10px;
     @include feed_p;
-    &:focus:required:invalid {
+    &:focus:required:invalid,
+    &:focus:required:invalid ~ .submit {
         border: 1px solid $color-red;
         color: $color-red;
     }
-    &:focus:required {
+    &:focus:required,
+    &:focus:required ~ .submit {
         border: 1px solid $color-green;
         color: $color-green;
     }
