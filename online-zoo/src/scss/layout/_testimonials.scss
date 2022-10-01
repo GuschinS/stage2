@@ -89,3 +89,51 @@
         background-image: url(../assets/images/testimonials-four.jpg);
     }
 }
+
+@media (max-width: 1400px) {
+    .testimonials {
+        margin: 100px auto 0;
+        max-width: 1000px;
+        height: 742px;
+        h2 {
+            margin: 1px 0 29px;
+        }
+        .line-scroll {
+            margin: 20px 0 20px -16px;
+            width: 390px;
+        }
+        & ::-webkit-slider-thumb {
+            width: 75px;
+        }
+        .wrapper-button {
+            margin-top: 16px;
+        }
+        button {
+            margin-left: 30px;
+        }
+        .leaf {
+            top: 3807px;
+            width: 196px;
+            background-image: url(../assets/svg/leav_foto_small_desktop.svg);
+        }
+    }
+
+    .testimonials-cards {
+        max-width: 940px;
+        .testimonials-card {
+            width: 294px;
+        }
+        .one {
+            background-image: url(../assets/images/testimonials_one_sd.jpg);
+        }
+        .two {
+            background-image: url(../assets/images/testimonials_two_sd.jpg);
+        }
+        .three {
+            background-image: url(../assets/images/testimonials_three_sd.jpg);
+        }
+        .four {
+            display: none;
+        }
+    }
+}
