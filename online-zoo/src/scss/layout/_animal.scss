@@ -6,9 +6,6 @@
     max-width: 1600px;
     margin: -80px auto 0;
     background-image: url(../assets/images/panda.jpg);
-    // background-repeat: no-repeat;
-    // background-position: center;
-    // background-color: #283035;
     height: 780px;
     .ellipse {
         position: absolute;
@@ -44,5 +41,40 @@
         height: 54px;
         left: calc(50% - 298px / 2 + 332px);
         top: 626px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .animal {
+        max-width: 1000px;
+        background-image: url(../assets/images/panda_small_desktop.jpg);
+        height: 584px;
+        .ellipse {
+            position: absolute;
+            right: 17.8%;
+            top: 70px;
+            width: 367px;
+            height: 367px;
+            z-index: 0;
+        }
+        .text {
+            width: 400px;
+            height: 320px;
+            right: 9%;
+            top: 123px;
+            p {
+                @include h1-small;
+            }
+            h2 {
+                @include h1-small;
+            }
+        }
+        button {
+            position: absolute;
+            width: 298px;
+            height: 54px;
+            left: 56.5%;
+            top: 483px;
+        }
     }
 }
