@@ -9,12 +9,14 @@ footer {
 
 .wrapper-footer {
     display: flex;
-    width: 1160px;
+    flex-direction: column;
+    max-width: 1160px;
     margin: 0 auto;
     padding-top: 25px;
-    // .one {
-    //     margin-top: 24px;
-    // }
+    .logo-sub {
+        display: flex;
+        justify-content: space-between;
+    }
     h2 {
         width: 82px;
         padding-bottom: 4px;
@@ -41,6 +43,9 @@ footer {
         &:hover {
             box-shadow: 0px 5px 10px 2px rgba(250, 250, 250, 0.1);
         }
+    }
+    .social-nav {
+        display: flex;
     }
     .social {
         display: flex;
@@ -82,13 +87,16 @@ footer {
     .two {
         display: flex;
         align-items: flex-end;
-        width: 792px;
-        height: 385px;
-        padding-left: 38px;
+        max-width: 792px;
+        height: 195px;
+        padding-left: 19.4%;
         li:nth-child(4) {
             width: 100px;
             padding-left: 21px;
         }
+    }
+    .three {
+        width: 31.7%;
     }
     .three .email {
         color: $color-white;
@@ -107,9 +115,14 @@ footer {
         margin-left: 6px;
     }
     .text-three {
-        position: relative;
-        top: 200px;
-        left: 139px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        // position: relative;
+        // top: 110px;
+        // left: 168px;
+        height: 174px;
+        padding-left: 14.5%;
         color: $color-white;
         @include text-three;
         p {
@@ -135,5 +148,45 @@ footer {
     &:focus:required ~ .submit {
         border: 1px solid $color-green;
         color: $color-green;
+    }
+}
+
+@media (max-width: 1400px) {
+    .wrapper-footer {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 25px 0 0 25px;
+        .logo-sub {
+            display: flex;
+            justify-content: space-between;
+            padding-right: 25px;
+        }
+        .social-nav {
+            display: flex;
+        }
+        .two {
+            max-width: 792px;
+            padding-left: 12.7%;
+            li:nth-child(4) {
+                width: 100px;
+                padding-left: 14px;
+            }
+            li {
+                width: 86px;
+            }
+        }
+        .three {
+            width: 40.8%;
+        }
+        .submit {
+            margin-left: 4px;
+        }
+        .text-three {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 174px;
+            padding-left: 8.5%;
+        }
     }
 }
