@@ -23,3 +23,16 @@
     box-shadow: 130px 0 0 $color-yellow, 260px 0 0 $color-yellow, 390px 0 0 $color-yellow, 520px 0 0 $color-yellow,
         650px 0 0 $color-yellow, 780px 0 0 $color-yellow, 910px 0 0 $color-yellow;
 }
+
+@media (max-width: 1400px) {
+    #range-donate::before {
+        width: 780px;
+        right: 80px;
+        bottom: 395px;
+    }
+
+    #range-donate::after {
+        left: 76px;
+        bottom: 390px;
+    }
+}
