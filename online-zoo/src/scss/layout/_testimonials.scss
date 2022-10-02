@@ -7,10 +7,9 @@
     flex-direction: column;
     align-items: center;
     margin: 140px auto 179px;
-    width: 1160px;
+    max-width: 1160px;
     height: 600px;
     h2 {
-        // text-align: center;
         margin: 1px 0 46px;
         color: $color-black-blue;
         @include h3-36;
@@ -72,6 +71,7 @@
     justify-content: space-between;
     width: 1160px;
     height: 391px;
+    margin: 0 auto;
     .testimonials-card {
         width: 267px;
         height: 391px;
@@ -119,7 +119,7 @@
     }
 
     .testimonials-cards {
-        max-width: 940px;
+        width: 940px;
         .testimonials-card {
             width: 294px;
         }
@@ -131,6 +131,60 @@
         }
         .three {
             background-image: url(../assets/images/testimonials_three_sd.jpg);
+        }
+        .four {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .testimonials {
+        margin: 60px auto 0;
+        max-width: 640px;
+        height: 608px;
+        h2 {
+            margin: 1px 0 12px;
+        }
+        .line-scroll {
+            display: none;
+        }
+        & ::-webkit-slider-thumb {
+            width: 75px;
+        }
+        .wrapper-button {
+            justify-content: center;
+            margin-top: 7px;
+        }
+        button {
+            width: 240px;
+            height: 54px;
+            margin-left: 0;
+        }
+        .leaf {
+            top: 3164px;
+            width: 116px;
+            background-image: url(../assets/svg/leav_foto_tablet.svg);
+            background-repeat: no-repeat;
+        }
+    }
+
+    .testimonials-cards {
+        max-width: 600px;
+        flex-direction: column;
+        justify-content: space-evenly;
+        .testimonials-card {
+            width: 600px;
+            height: 109px;
+        }
+        .one {
+            background-image: url(../assets/images/testimonials_one_tablet.jpg);
+        }
+        .two {
+            background-image: url(../assets/images/testimonials_two_tablet.jpg);
+        }
+        .three {
+            background-image: url(../assets/images/testimonials_three_tablet.jpg);
         }
         .four {
             display: none;

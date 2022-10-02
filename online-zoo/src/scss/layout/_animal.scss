@@ -78,3 +78,35 @@
         }
     }
 }
+
+@media (max-width: 950px) {
+    .animal {
+        max-width: 640px;
+        background-image: url(../assets/images/panda_tablet.jpg);
+        height: 373px;
+        margin-top: 0;
+        .ellipse {
+            position: absolute;
+            right: 11%;
+            top: 44px;
+            width: 237px;
+            height: 237px;
+        }
+        .text {
+            width: 255px;
+            height: 204px;
+            right: 3%;
+            top: 84px;
+            p {
+                font-size: 54px;
+            }
+            h2 {
+                font-size: 54px;
+            }
+        }
+        button {
+            left: 3%;
+            top: 279px;
+        }
+    }
+}
