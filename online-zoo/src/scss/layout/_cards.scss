@@ -64,7 +64,6 @@
 }
 .cards {
     display: grid;
-    // grid-template-columns: repeat(3, 1fr);
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 30px;
@@ -96,42 +95,36 @@
         }
     }
     .one {
-        // grid-area: 1 / 1 / 2 / 2;
         grid-area: 1 / 1 / 2 / 2;
         .img {
             background-image: url(../assets/images/pandas.jpg);
         }
     }
     .two {
-        // grid-area: 1 / 2 / 2 / 3;
         grid-area: 1 / 2 / 2 / 3;
         .img {
             background-image: url(../assets/images/eagles.jpg);
         }
     }
     .three {
-        // grid-area: 1 / 3 / 2 / 4;
         grid-area: 1 / 3 / 2 / 4;
         .img {
             background-image: url(../assets/images/gorillas.jpg);
         }
     }
     .four {
-        // grid-area: 2 / 1 / 3 / 2;
         grid-area: 2 / 1 / 3 / 2;
         .img {
             background-image: url(../assets/images/sloth.jpg);
         }
     }
     .fife {
-        // grid-area: 2 / 2 / 3 / 3;
         grid-area: 2 / 2 / 3 / 3;
         .img {
             background-image: url(../assets/images/cheetahs.jpg);
         }
     }
     .six {
-        // grid-area: 2 / 3 / 3 / 4;
         grid-area: 2 / 3 / 3 / 4;
         .img {
             background-image: url(../assets/images/penguins.jpg);
@@ -224,8 +217,8 @@
         max-width: 940px;
         height: 801px;
         .card {
-            width: 294px;
-            height: 354px;
+            max-width: 294px;
+            max-height: 354px;
         }
         .one {
             grid-area: 1 / 1 / 2 / 2;
@@ -283,6 +276,107 @@
         .meet {
             background-image: url(../assets/svg/meet-fish_icon.svg);
             background-position: bottom 13px right 8px;
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .animals-cards-container {
+        height: 971px;
+        button {
+            margin-top: 16px;
+        }
+        .palm {
+            top: 1649px;
+            width: 150px;
+            background-image: url(../assets/images/palm_foto_tablet.png);
+        }
+        .strelitzia {
+            width: 176px;
+            top: 1720px;
+            background-image: url(../assets/images/strelitzia_tablet.png);
+        }
+    }
+    .animals-cards {
+        max-width: 600px;
+        .left-right {
+            top: 343px;
+        }
+        .left-button {
+            background-image: url(../assets/svg/arr_left.svg);
+            left: 41%;
+        }
+        .right-button {
+            background-image: url(../assets/svg/arr_right.svg);
+            right: 40.5%;
+        }
+    }
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 49px;
+        max-width: 600px;
+        .card {
+            max-width: 285px;
+            max-height: 332px;
+        }
+        .one {
+            grid-area: 1 / 1 / 2 / 2;
+            .img {
+                background-image: url(../assets/images/pandas.jpg);
+            }
+        }
+        .two {
+            grid-area: 1 / 2 / 2 / 3;
+            .img {
+                background-image: url(../assets/images/eagles.jpg);
+            }
+        }
+        .three {
+            grid-area: 2 / 1 / 3 / 2;
+            .img {
+                background-image: url(../assets/images/gorillas.jpg);
+            }
+        }
+        .four {
+            display: none;
+        }
+        .fife {
+            display: none;
+        }
+        .six {
+            display: none;
+        }
+        .seven {
+            grid-area: 2 / 2 / 3 / 3;
+            display: block;
+            .img {
+                background-image: url(../assets/images/alligators.jpg);
+            }
+        }
+
+        .img {
+            height: 285px;
+        }
+        .description {
+            height: 46px;
+            padding-left: 10px;
+            h3 {
+                font-size: 13px;
+                margin: 7px 0 -2px;
+            }
+            p {
+                font-size: 12px;
+            }
+        }
+        .banana {
+            background-position: bottom 7px right 7px;
+            background-size: 10%;
+        }
+        .meet {
+            background-position: bottom 13px right 8px;
+            background-size: 10%;
         }
     }
 }
