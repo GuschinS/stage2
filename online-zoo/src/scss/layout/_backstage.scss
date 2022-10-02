@@ -82,8 +82,48 @@
             }
         }
         .flower {
-            top: 792px;
             display: none;
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .backstage {
+        display: flex;
+
+        max-width: 600px;
+        height: 427px;
+        margin: 67px auto 13px;
+        .photo {
+            display: none;
+        }
+        .text {
+            width: 100%;
+            padding-left: 0;
+            h2 {
+                padding-left: 3px;
+            }
+            h3 {
+                padding-left: 4px;
+                margin: 0 0 19px;
+            }
+            p {
+                @include p;
+            }
+            .one {
+                width: 450px;
+                margin: 22px 0 30px;
+            }
+            .two {
+                @include feed_p;
+                width: 485px;
+            }
+        }
+        .flower {
+            top: 368px;
+            width: 133px;
+            display: block;
+            background-image: url(../assets/images/flower_foto_tablet.png);
         }
     }
 }
