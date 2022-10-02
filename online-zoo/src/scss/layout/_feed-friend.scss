@@ -180,3 +180,70 @@
         }
     }
 }
+
+@media (max-width: 950px) {
+    .feed-friend {
+        height: 780px;
+    }
+
+    .container-feed {
+        max-width: 640px;
+        height: 742px;
+        margin: 18px auto 0;
+        h2 {
+            margin-top: 12px;
+            font-size: 42px;
+        }
+        .text {
+            padding-left: 20px;
+            h3 {
+                margin: 21px 0 15px;
+                font-size: 22px;
+            }
+            .medium {
+                max-width: 600px;
+                padding-top: 8px;
+            }
+            p {
+                margin-top: -7px;
+            }
+            .p-600 {
+                max-width: 600px;
+            }
+            .p-link {
+                max-width: 280px;
+                bottom: 21px;
+                left: 270px;
+            }
+        }
+        h3 {
+            margin-top: -6px;
+            margin-bottom: 14px;
+        }
+        .feed-cards {
+            max-width: 600px;
+            padding-top: 4px;
+            padding-right: 11px;
+
+            .one {
+                &::after {
+                    content: url(../assets/svg/arrow_green.svg);
+                    position: relative;
+                    left: 137px;
+                    bottom: 253px;
+                }
+            }
+            .two {
+                &::after {
+                    content: url(../assets/svg/arrow_green.svg);
+                    position: relative;
+                    left: 133px;
+                    bottom: 277px;
+                }
+            }
+        }
+        button {
+            margin-top: 45px;
+        }
+    }
+}
