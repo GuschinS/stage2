@@ -84,6 +84,35 @@ footer {
         background-image: url(../assets/svg/youtube.svg);
         background-repeat: no-repeat;
     }
+    .social-small {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        top: 13px;
+        left: 25px;
+        height: 163px;
+        .facebook {
+            width: 26px;
+            background-image: url(../assets/svg/facebook_small.svg);
+            background-repeat: no-repeat;
+        }
+        .twitter {
+            width: 26px;
+            background-image: url(../assets/svg/twitter_small.svg);
+            background-repeat: no-repeat;
+        }
+        .instagram {
+            width: 26px;
+            background-image: url(../assets/svg/instagram_small.svg);
+            background-repeat: no-repeat;
+        }
+        .youtube {
+            width: 26px;
+            background-image: url(../assets/svg/youtube_small.svg);
+            background-repeat: no-repeat;
+        }
+    }
     .two {
         display: flex;
         align-items: flex-end;
@@ -114,13 +143,13 @@ footer {
         border-radius: 5px;
         margin-left: 6px;
     }
+    .social-small {
+        display: none;
+    }
     .text-three {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        // position: relative;
-        // top: 110px;
-        // left: 168px;
         height: 174px;
         padding-left: 14.5%;
         color: $color-white;
@@ -161,6 +190,7 @@ footer {
             justify-content: space-between;
             padding-right: 25px;
         }
+
         .social-nav {
             display: flex;
         }
@@ -187,6 +217,65 @@ footer {
             justify-content: flex-end;
             height: 174px;
             padding-left: 8.5%;
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    footer {
+        height: 282px;
+    }
+    .wrapper-footer {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0;
+        .logo-sub {
+            display: flex;
+            justify-content: space-between;
+            padding-right: 25px;
+        }
+        h2 {
+            font-size: 18px;
+        }
+        button {
+            margin-top: 18px;
+        }
+        .social-nav {
+            display: flex;
+        }
+        .social {
+            display: none;
+        }
+        .two {
+            max-width: 370px;
+            height: 124px;
+            padding-left: 0;
+            li:nth-child(4) {
+                width: 100px;
+                padding-left: 7px;
+            }
+            ul {
+                margin-left: -15%;
+            }
+            li {
+                width: 74px;
+            }
+        }
+        .three {
+            display: none;
+        }
+        .submit {
+            margin-left: 4px;
+        }
+        .social-small {
+            display: flex;
+        }
+        .text-three {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 104px;
+            padding-left: 10px;
         }
     }
 }
