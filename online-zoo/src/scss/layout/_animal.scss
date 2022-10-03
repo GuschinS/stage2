@@ -110,3 +110,36 @@
         }
     }
 }
+
+@media (max-width: 610px) {
+    .animal {
+        max-width: 320px;
+        background-image: url(../assets/images/panda_m.jpg);
+        background-repeat: no-repeat;
+        height: 187px;
+        margin: 34px auto 0;
+        .ellipse {
+            position: absolute;
+            right: 12%;
+            top: 56px;
+            width: 119px;
+            height: 119px;
+        }
+        .text {
+            width: 128px;
+            height: 102px;
+            right: 4.6%;
+            top: 75px;
+            p {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+        }
+        button {
+            left: 3%;
+            top: 241px;
+        }
+    }
+}
