@@ -34,5 +34,37 @@
     #range-donate::after {
         left: 76px;
         bottom: 390px;
+        box-shadow: 130px 0 0 $color-yellow, 260px 0 0 $color-yellow, 390px 0 0 $color-yellow, 520px 0 0 $color-yellow,
+            650px 0 0 $color-yellow, 780px 0 0 $color-yellow;
+    }
+}
+
+@media (max-width: 950px) {
+    #range-donate::before {
+        width: 510px;
+        right: 44px;
+        bottom: 372px;
+    }
+
+    #range-donate::after {
+        left: 35px;
+        bottom: 368px;
+        box-shadow: 130px 0 0 $color-yellow, 260px 0 0 $color-yellow, 390px 0 0 $color-yellow, 520px 0 0 $color-yellow;
+    }
+}
+
+@media (max-width: 610px) {
+    #range-donate::before {
+        width: 257px;
+        height: 1px;
+        right: 22px;
+        bottom: 298px;
+    }
+    #range-donate::after {
+        width: 5px;
+        height: 5px;
+        left: 18px;
+        bottom: 296px;
+        box-shadow: 65px 0 0 $color-yellow, 130px 0 0 $color-yellow, 195px 0 0 $color-yellow, 260px 0 0 $color-yellow;
     }
 }

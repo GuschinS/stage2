@@ -127,3 +127,49 @@
         }
     }
 }
+
+@media (max-width: 610px) {
+    .backstage {
+        max-width: 350px;
+        height: 427px;
+        margin: 67px auto 38px;
+        .photo {
+            display: none;
+        }
+        .text {
+            width: 100%;
+            padding-left: 7px;
+            padding-top: 45px;
+            h2 {
+                padding-left: 3px;
+                font-size: 24px;
+            }
+            h3 {
+                padding-left: 5px;
+                margin: 0 0 9px;
+                font-size: 24px;
+            }
+            p {
+                @include p;
+                font-size: 16px;
+            }
+            .one {
+                width: 290px;
+                margin: 10px 0 21px;
+                padding-left: 5px;
+            }
+            .two {
+                @include feed_p;
+                line-height: 138%;
+                width: 300px;
+                padding-left: 3px;
+            }
+        }
+        .flower {
+            top: 259px;
+            width: 35px;
+            display: block;
+            background-image: url(../assets/images/flower_foto_m.png);
+        }
+    }
+}
