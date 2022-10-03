@@ -315,6 +315,8 @@ input[type="number"] {
         .range-donate {
             margin: 3px 0 30px;
             width: 811px;
+            border-left: solid 0px #404950;
+            border-right: solid 0px #404950;
         }
     }
 
@@ -326,12 +328,12 @@ input[type="number"] {
         & option:nth-child(1) {
             display: none;
         }
-        & option:nth-child(5) {
+        & option:nth-child(3) {
             color: $color-orange-light;
         }
-        & option:nth-child(3) {
-            color: $color-black;
-        }
+        // & option:nth-child(3) {
+        //     color: $color-black;
+        // }
     }
 }
 
@@ -404,6 +406,8 @@ input[type="number"] {
         .range-donate {
             margin: 3px 0 30px;
             width: 600px;
+            border-left: solid 20px #404950;
+            border-right: solid 20px #404950;
         }
         .number {
             width: 180px;
@@ -542,12 +546,18 @@ input[type="number"] {
             margin: 5px 0 14px;
             width: 300px;
             height: 13px;
+            border-left: solid 10px #404950;
+            border-right: solid 9px #404950;
         }
         & ::-webkit-slider-thumb {
             width: 20px;
             height: 20px;
             background-image: url(../assets/svg/roller_icon.svg);
             background-size: 100%;
+        }
+        & ::-webkit-slider-runnable-track {
+            // -webkit-appearance: none;
+            height: 29px;
         }
         .number {
             width: 180px;
