@@ -1,0 +1,2 @@
+(()=>{"use strict";var a=document.querySelector(".range-donate"),e=window.matchMedia("(max-width: 1400px)"),t=window.matchMedia("(max-width: 950px)");function d(e){e.matches?(a.max=7,a.value=2):(a.max=8,a.value=3)}function i(e){e.matches?(a.max=5,a.value=3):(a.max=7,a.value=2)}e.addListener(d),t.addListener(i),d(e),i(t)})();
+//# sourceMappingURL=main.268d80a3da2edff8c9bf.js.map
