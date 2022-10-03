@@ -321,6 +321,7 @@ footer {
         }
         .social-nav {
             display: flex;
+            height: 117px;
             flex-direction: column;
         }
         .social {
@@ -330,6 +331,7 @@ footer {
             max-width: 300px;
             height: 124px;
             padding-left: 0;
+            padding-top: 67px;
             li:nth-child(4) {
                 width: 97px;
                 padding-left: 0;
