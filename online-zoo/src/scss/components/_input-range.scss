@@ -36,3 +36,16 @@
         bottom: 390px;
     }
 }
+
+@media (max-width: 950px) {
+    #range-donate::before {
+        width: 510px;
+        right: 44px;
+        bottom: 372px;
+    }
+
+    #range-donate::after {
+        left: 35px;
+        bottom: 368px;
+    }
+}
