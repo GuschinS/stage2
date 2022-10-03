@@ -145,3 +145,11 @@ ul {
         }
     }
 }
+
+@media (max-width: 610px) {
+    header {
+        .container {
+            max-width: 300px;
+        }
+    }
+}
