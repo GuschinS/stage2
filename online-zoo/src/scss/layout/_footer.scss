@@ -184,11 +184,11 @@ footer {
     .wrapper-footer {
         max-width: 960px;
         margin: 0 auto;
-        padding: 25px 0 0 25px;
+        padding: 25px 0 0 10px;
         .logo-sub {
             display: flex;
             justify-content: space-between;
-            padding-right: 25px;
+            padding-right: 36px;
         }
 
         .social-nav {
@@ -196,7 +196,7 @@ footer {
         }
         .two {
             max-width: 792px;
-            padding-left: 12.7%;
+            padding-left: 14%;
             li:nth-child(4) {
                 width: 100px;
                 padding-left: 14px;
@@ -216,7 +216,7 @@ footer {
             flex-direction: column;
             justify-content: flex-end;
             height: 174px;
-            padding-left: 8.5%;
+            padding-left: 7.2%;
         }
     }
 }
