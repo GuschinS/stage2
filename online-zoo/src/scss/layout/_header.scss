@@ -10,8 +10,7 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        // width: 72.5%;
-        max-width: 1160px;
+        width: 72.5%;
         height: 100%;
         margin: 0 auto;
     }
@@ -84,7 +83,7 @@ ul {
         position: relative;
         z-index: 2;
         .container {
-            max-width: 940px;
+            width: 94%;
         }
 
         ul {
@@ -108,7 +107,7 @@ ul {
         left: 0;
         width: 100%;
         .container {
-            max-width: 600px;
+            width: 94%;
             h1 {
                 width: 46px;
                 font-size: 12px;
@@ -149,7 +148,7 @@ ul {
 @media (max-width: 610px) {
     header {
         .container {
-            max-width: 300px;
+            width: 94%;
         }
     }
 }

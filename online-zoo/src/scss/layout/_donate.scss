@@ -1,5 +1,6 @@
 @import "../abstracts/_text-styles";
 @import "../abstracts/_color-styles";
+@import "../components/nav-hamburger";
 @import "../components/button";
 @import "../components/input-radio";
 @import "../components/input-range";
@@ -27,30 +28,9 @@ input[type="number"] {
 .donate {
     height: 1482px;
     padding-top: 11px;
-    background: linear-gradient(
-            315.75deg,
-            rgba(254, 210, 144, 0.7) 30.06%,
-            #febdab 100.95%,
-            rgba(254, 210, 144, 0.7) 106.36%
-        ),
-        linear-gradient(
-            315.75deg,
-            rgba(254, 189, 171, 0.74) 30.06%,
-            rgba(243, 169, 248, 0.66) 50.74%,
-            #e0d8f0 80.49%,
-            #eaf7fe 127.9%,
-            #eaf7fe 149.54%
-        ),
-        linear-gradient(
-            315.75deg,
-            rgba(254, 189, 171, 0.74) 30.06%,
-            rgba(243, 169, 248, 0.66) 50.74%,
-            #e0d8f0 80.49%,
-            #eaf7fe 127.9%,
-            #eaf7fe 149.54%
-        );
+    background: $gradient-feed-friend;
     .donate-text {
-        width: 1160px;
+        width: 72.5%;
         height: 238px;
         margin: 0 auto;
         h2 {
@@ -59,7 +39,6 @@ input[type="number"] {
             margin-bottom: -7px;
         }
         .p-donate-text {
-            // height: 94px;
             margin-top: 16px;
             @include medium;
             color: $color-white;
@@ -181,7 +160,6 @@ input[type="number"] {
         background-image: url(../assets/svg/roller_icon.svg);
     }
     & ::-webkit-slider-runnable-track {
-        // -webkit-appearance: none;
         height: 42px;
     }
 
@@ -285,7 +263,7 @@ input[type="number"] {
         height: 1333px;
         padding-top: 11px;
         .donate-text {
-            width: 940px;
+            width: 94%;
             height: 238px;
             margin: 0 auto;
             h2 {
@@ -332,15 +310,11 @@ input[type="number"] {
         & option:nth-child(3) {
             color: $color-orange-light;
         }
-        // & option:nth-child(3) {
-        //     color: $color-black;
-        // }
     }
 }
 
 @media (max-width: 950px) {
     .panda {
-        max-width: 1373px;
         height: 335px;
         margin: 34px auto 0;
         background-image: url(../assets/images/panda_donate_tablet.jpg);
@@ -453,7 +427,6 @@ input[type="number"] {
 
 @media (max-width: 610px) {
     .panda {
-        max-width: 766px;
         height: 187px;
         margin: 34px auto 0;
         background-image: url(../assets/images/panda_donate_m.jpg);
@@ -465,7 +438,7 @@ input[type="number"] {
         padding-top: 0;
         padding-bottom: 22px;
         .donate-text {
-            width: 320px;
+            width: 100%;
             padding-left: 10px;
             h2 {
                 line-height: 121%;
@@ -559,7 +532,6 @@ input[type="number"] {
             background-size: 100%;
         }
         & ::-webkit-slider-runnable-track {
-            // -webkit-appearance: none;
             height: 29px;
         }
         .number {

@@ -7,7 +7,7 @@
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    max-width: 1160px;
+    width: 72.5%;
     height: 403px;
     margin: 140px auto 180px;
     .photo {
@@ -54,7 +54,7 @@
 
 @media (max-width: 1400px) {
     .backstage {
-        max-width: 940px;
+        width: 94%;
         height: 427px;
         margin: 108px auto 133px;
         .photo {
@@ -90,8 +90,7 @@
 @media (max-width: 950px) {
     .backstage {
         display: flex;
-
-        max-width: 600px;
+        width: 94%;
         height: 427px;
         margin: 67px auto 13px;
         .photo {
@@ -111,12 +110,12 @@
                 @include p;
             }
             .one {
-                width: 450px;
+                width: 75%;
                 margin: 22px 0 30px;
             }
             .two {
                 @include feed_p;
-                width: 485px;
+                width: 81%;
             }
         }
         .flower {
@@ -130,7 +129,7 @@
 
 @media (max-width: 610px) {
     .backstage {
-        max-width: 350px;
+        width: 100%;
         height: 427px;
         margin: 67px auto 38px;
         .photo {
@@ -154,14 +153,14 @@
                 font-size: 16px;
             }
             .one {
-                width: 290px;
+                width: 94%;
                 margin: 10px 0 21px;
                 padding-left: 5px;
             }
             .two {
                 @include feed_p;
                 line-height: 138%;
-                width: 300px;
+                width: 96%;
                 padding-left: 3px;
             }
         }

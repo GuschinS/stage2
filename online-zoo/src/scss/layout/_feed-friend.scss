@@ -4,31 +4,10 @@
 
 .feed-friend {
     display: flex;
-    max-width: 100%;
+    width: 100%;
     height: 1004px;
     margin: 0 auto;
-    background: linear-gradient(
-            315.75deg,
-            rgba(254, 210, 144, 0.7) 30.06%,
-            #febdab 100.95%,
-            rgba(254, 210, 144, 0.7) 106.36%
-        ),
-        linear-gradient(
-            315.75deg,
-            rgba(254, 189, 171, 0.74) 30.06%,
-            rgba(243, 169, 248, 0.66) 50.74%,
-            #e0d8f0 80.49%,
-            #eaf7fe 127.9%,
-            #eaf7fe 149.54%
-        ),
-        linear-gradient(
-            315.75deg,
-            rgba(254, 189, 171, 0.74) 30.06%,
-            rgba(243, 169, 248, 0.66) 50.74%,
-            #e0d8f0 80.49%,
-            #eaf7fe 127.9%,
-            #eaf7fe 149.54%
-        );
+    background: $gradient-feed-friend;
     opacity: 0.9;
 }
 
@@ -36,7 +15,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 1160px;
+    width: 72.5%;
     height: 835px;
     background: rgba(253, 253, 255, 0.52);
     backdrop-filter: blur(2px);
@@ -145,7 +124,7 @@
     }
 
     .container-feed {
-        max-width: 940px;
+        width: 94%;
         height: 796px;
         margin: 30px auto 100px;
         h2 {
@@ -187,7 +166,7 @@
     }
 
     .container-feed {
-        max-width: 640px;
+        width: 100%;
         height: 742px;
         margin: 18px auto 0;
         h2 {
@@ -255,7 +234,7 @@
     }
 
     .container-feed {
-        max-width: 300px;
+        width: 94%;
         height: auto;
         margin: 18px auto 0;
         padding-bottom: 40px;
@@ -281,8 +260,7 @@
             margin-bottom: 18px;
         }
         .feed-cards {
-            max-width: 300px;
-            // height: 724px;
+            width: 94%;
             height: auto;
             flex-direction: column;
             align-items: center;
