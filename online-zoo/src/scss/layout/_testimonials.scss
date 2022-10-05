@@ -159,10 +159,20 @@
             margin-left: 0;
         }
         .leaf {
-            top: 3873px;
+            top: 3850px;
             width: 51px;
             background-image: url(../assets/images/leav_foto_m.png);
             background-repeat: no-repeat;
+        }
+    }
+}
+@media (max-width: 335px) {
+    .testimonials {
+        .user-information {
+            margin-left: 6px;
+        }
+        .leaf {
+            top: 3873px;
         }
     }
 }
