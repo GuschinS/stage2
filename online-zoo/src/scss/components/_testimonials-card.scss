@@ -1,0 +1,94 @@
+.testimonials-card {
+    width: 23%;
+    background: $color-gray-light;
+    border: solid 2px transparent;
+    background: linear-gradient($color-gray-light, $color-gray-light) padding-box, $gradient-pink border-box;
+    border-radius: 20px;
+    padding: 15px 14px 19px 15px;
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}
+.testimonials-card__user {
+    display: flex;
+}
+.user-photo {
+    width: 37px;
+    height: 37px;
+}
+.one .user-photo {
+    background-image: url(../assets/svg/user_icon.svg);
+}
+.two .user-photo {
+    background-image: url(../assets/images/oskar_samborsky.png);
+}
+.three .user-photo {
+    background-image: url(../assets/images/fredericka_michelin.png);
+}
+.four .user-photo {
+    background-image: url(../assets/images/mila_riksha.png);
+}
+.user-information {
+    margin-left: 10px;
+    .user-name {
+        @include p;
+    }
+    .local-date {
+        display: flex;
+        align-items: center;
+    }
+    .local,
+    .date {
+        @include description;
+        color: $color-gray-smoky-light;
+    }
+    .point {
+        width: 5px;
+        height: 5px;
+        border-radius: 5px;
+        background-color: $color-gray-smoky-light;
+        margin: 0 8px;
+    }
+}
+.testimonials-card__text {
+    height: 309px;
+    @include description;
+    color: $color-gray;
+    margin-top: 10px;
+    overflow: scroll;
+}
+
+@media (max-width: 1400px) {
+    .testimonials-card {
+        width: 294px;
+    }
+    .four {
+        display: none;
+    }
+}
+
+@media (max-width: 950px) {
+    .testimonials-card {
+        width: 99%;
+        height: 109px;
+        padding: 11px 25px 9px 9px;
+    }
+    .four {
+        display: none;
+    }
+    .testimonials-card__text {
+        height: 38px;
+        margin-top: 10px;
+        padding-left: 7px;
+        overflow: scroll;
+    }
+}
+
+@media (max-width: 610px) {
+    .testimonials-card {
+        width: 100%;
+        height: 109px;
+        padding: 11px 25px 9px 13px;
+    }
+}

@@ -10,7 +10,9 @@ footer {
 .wrapper-footer {
     display: flex;
     flex-direction: column;
-    max-width: 1160px;
+    align-items: stretch;
+    // max-width: 1160px;
+    width: 72.5%;
     margin: 0 auto;
     padding-top: 25px;
     .logo-sub {
@@ -125,6 +127,7 @@ footer {
         }
     }
     .three {
+        display: flex;
         width: 31.7%;
     }
     .three .email {
@@ -134,6 +137,10 @@ footer {
     form {
         margin-top: 16px;
     }
+    .email-submit {
+        display: flex;
+        align-items: baseline;
+    }
     .submit {
         width: 129px;
         height: 42px;
@@ -141,7 +148,7 @@ footer {
         border: 1px solid $color-black-blue;
         background: $color-gray-light;
         border-radius: 5px;
-        margin-left: 6px;
+        margin-left: 10px;
     }
     .social-small {
         display: none;
@@ -182,7 +189,8 @@ footer {
 
 @media (max-width: 1400px) {
     .wrapper-footer {
-        max-width: 960px;
+        // max-width: 960px;
+        width: 96%;
         margin: 0 auto;
         padding: 25px 0 0 10px;
         .logo-sub {
@@ -209,7 +217,7 @@ footer {
             width: 40.8%;
         }
         .submit {
-            margin-left: 4px;
+            margin-left: 8px;
         }
         .text-three {
             display: flex;
@@ -235,7 +243,8 @@ footer {
         height: 282px;
     }
     .wrapper-footer {
-        max-width: 600px;
+        // max-width: 600px;
+        width: 94%;
         margin: 0 auto;
         padding: 0;
         .logo-sub {
@@ -302,7 +311,9 @@ footer {
         height: 334px;
     }
     .wrapper-footer {
-        max-width: 300px;
+        // max-width: 300px;
+        align-items: center;
+        width: 95%;
         margin: 0 auto;
         padding: 0;
         .logo-sub {
