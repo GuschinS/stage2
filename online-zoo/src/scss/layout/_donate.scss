@@ -16,9 +16,11 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
-
+.panda-container {
+    width: 100%;
+    background-color: $color-black-blue;
+}
 .panda {
-    max-width: 1600px;
     height: 386px;
     margin: 0 auto;
     background-image: url(../assets/images/panda_bg.jpg);
@@ -240,10 +242,17 @@ input[type="number"] {
     @include dollar;
     margin-top: -17px;
     margin-left: -10px;
+
     option {
         width: 66px;
-        &:nth-child(3) {
+        &.black {
+            color: $color-black;
+        }
+        &.yellow {
             color: $color-orange-light;
+        }
+        &::before {
+            content: url(../assets/svg/dollar.svg);
         }
     }
     & option:nth-child(1) {
@@ -307,9 +316,9 @@ input[type="number"] {
         & option:nth-child(1) {
             display: none;
         }
-        & option:nth-child(3) {
-            color: $color-orange-light;
-        }
+        // & option:nth-child(3) {
+        //     color: $color-orange-light;
+        // }
     }
 }
 
@@ -416,12 +425,12 @@ input[type="number"] {
         & option:nth-child(3) {
             display: none;
         }
-        & option:nth-child(6) {
-            color: $color-orange-light;
-        }
-        & option:nth-child(5) {
-            color: $color-black;
-        }
+        // & option:nth-child(6) {
+        //     color: $color-orange-light;
+        // }
+        // & option:nth-child(5) {
+        //     color: $color-black;
+        // }
     }
 }
 
