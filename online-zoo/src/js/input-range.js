@@ -4,8 +4,18 @@ const inputNumber = document.querySelector(".number");
 const options = document.querySelectorAll(".option");
 const wh1400 = window.matchMedia("(max-width: 1400px)");
 const wh950 = window.matchMedia("(max-width: 950px)");
-const yellow1400 = document.querySelector(".tickmarks .option:nth-child(3) ");
-const yellow950 = document.querySelector(".tickmarks .option:nth-child(6)");
+const yellowElement = document.querySelector(
+  ".tickmarks .option:nth-child(6) "
+);
+// const yellow950 = document.querySelector(".tickmarks .option:nth-child(6)");
+const screenWidth = window.screen.width;
+
+window.onload = function () {
+  addRangeClickHendler();
+  addTickmarksClickHendler();
+  addInputNumberValueHendler();
+  defaultInputRangeMax();
+};
 
 // сбрасывает все выбранные
 const removeYellowClass = () => {
@@ -15,46 +25,26 @@ const removeYellowClass = () => {
     option.classList.add("black");
   });
 };
-
-const maxWidth1400 = (e) => {
-  removeYellowClass();
-  if (e.matches) {
-    inputRange.max = 7;
-    inputRange.value = 2;
-    yellow1400.classList.add("yellow");
-  } else {
-    inputRange.max = 8;
-    inputRange.value = 3;
-    yellow1400.classList.add("yellow");
-  }
-};
-
-const maxWidth950 = (e) => {
-  removeYellowClass();
-  if (e.matches) {
+// меняет максимум инпут рейндж в зависимости от разрешения экрана
+const defaultInputRangeMax = () => {
+  if (screenWidth <= 950) {
     inputRange.max = 5;
     inputRange.value = 3;
-    yellow950.classList.add("yellow");
-  } else {
+  } else if (screenWidth <= 1400) {
     inputRange.max = 7;
-    inputRange.value = 2;
-    yellow1400.classList.add("yellow");
+    inputRange.value = 5;
   }
-};
-
-wh1400.addEventListener("change", maxWidth1400);
-wh950.addEventListener("change", maxWidth950);
-
-window.onload = function () {
-  addRangeClickHendler();
-  addTickmarksClickHendler();
-  addInputNumberValueHendler();
 };
 
 // функция отслеживает клик по рейндж инпуту
 const addRangeClickHendler = () => {
   inputRange.addEventListener("click", (e) => {
     let clickedRangeValue = e.target.value;
+    if (screenWidth <= 950) {
+      clickedRangeValue = +clickedRangeValue + 3;
+    } else if (screenWidth <= 1400) {
+      clickedRangeValue = +clickedRangeValue + 1;
+    }
     removeYellowClass();
     addValueFromRange(clickedRangeValue);
     changeInputNumberFromRange(clickedRangeValue);
@@ -66,6 +56,11 @@ const addTickmarksClickHendler = () => {
     let clickedOption = e.target;
     let label = e.target.label;
     let clickedValue = e.target.value;
+    if (screenWidth <= 950) {
+      clickedValue = +clickedValue - 3;
+    } else if (screenWidth <= 1400) {
+      clickedValue = +clickedValue - 1;
+    }
     removeYellowClass();
     selectClickedOption(clickedOption);
     selectClickedValue(clickedValue);
@@ -95,7 +90,7 @@ const changeInputNumber = (label) => {
 };
 
 // добавляет выбраное число на рейндж инпуте в инпут
-changeInputNumberFromRange = (clickedRangeValue) => {
+const changeInputNumberFromRange = (clickedRangeValue) => {
   let option = document.querySelector(
     `.tickmarks .option:nth-child(${clickedRangeValue})`
   );
@@ -118,3 +113,33 @@ const findElementByInput = (inputNumberValue) => {
     }
   });
 };
+
+// отслеживают разрешение экрана и меняют максимум и валью рейндж инпут
+const maxWidth1400 = (e) => {
+  removeYellowClass();
+  if (e.matches) {
+    inputRange.max = 7;
+    inputRange.value = 5;
+    yellowElement.classList.add("yellow");
+  } else {
+    inputRange.max = 8;
+    inputRange.value = 6;
+    yellowElement.classList.add("yellow");
+  }
+};
+
+const maxWidth950 = (e) => {
+  removeYellowClass();
+  if (e.matches) {
+    inputRange.max = 5;
+    inputRange.value = 3;
+    yellowElement.classList.add("yellow");
+  } else {
+    inputRange.max = 7;
+    inputRange.value = 5;
+    yellowElement.classList.add("yellow");
+  }
+};
+
+wh1400.addEventListener("change", maxWidth1400);
+wh950.addEventListener("change", maxWidth950);
