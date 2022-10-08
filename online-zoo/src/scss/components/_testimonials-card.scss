@@ -17,16 +17,23 @@
     width: 37px;
     height: 37px;
 }
-.one .user-photo {
+.one .user-photo,
+.fife .user-photo,
+.nine .user-photo {
     background-image: url(../assets/svg/user_icon.svg);
 }
-.two .user-photo {
+.two .user-photo,
+.six .user-photo,
+.ten .user-photo {
     background-image: url(../assets/images/oskar_samborsky.png);
 }
-.three .user-photo {
+.three .user-photo,
+.seven .user-photo,
+.eleven .user-photo {
     background-image: url(../assets/images/fredericka_michelin.png);
 }
-.four .user-photo {
+.four .user-photo,
+.eight .user-photo {
     background-image: url(../assets/images/mila_riksha.png);
 }
 .user-information {
@@ -73,6 +80,7 @@
         width: 99%;
         height: 109px;
         padding: 11px 25px 9px 9px;
+        margin-bottom: 15px;
     }
     .four {
         display: none;
