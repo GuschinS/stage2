@@ -1,0 +1,68 @@
+.cards-container {
+    position: relative;
+    width: calc(93% - 15px);
+    overflow: hidden;
+}
+.cards {
+    position: relative;
+    display: none;
+    animation: 1500ms ease-out;
+}
+.cards.active,
+.cards.next {
+    display: grid;
+}
+.cards.next {
+    position: absolute;
+    top: 0;
+    width: calc(100% - 20px);
+}
+
+.to-left {
+    animation-name: left;
+}
+
+.to-right {
+    animation-name: right;
+    animation-direction: reverse;
+}
+
+.from-left {
+    animation-name: left;
+    animation-direction: reverse;
+}
+
+.from-right {
+    animation-name: right;
+}
+
+@keyframes left {
+    from {
+        left: 0;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes right {
+    from {
+        right: 100%;
+    }
+    to {
+        right: 0;
+    }
+}
+
+@media (max-width: 1400px) {
+    .cards-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 950px) {
+    .cards.next {
+        width: calc(97% - 15px);
+        margin: 0 15px;
+    }
+}

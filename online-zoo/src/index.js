@@ -1,6 +1,8 @@
 import "./scss/main.scss";
 import "./js/hamburger";
 import "./js/input-range";
+import "./js/carousel";
+
 // import { Article } from "./js/Article";
 // import "./js/testimonials-card";
 

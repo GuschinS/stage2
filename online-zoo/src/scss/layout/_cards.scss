@@ -1,12 +1,14 @@
 @import "../abstracts/text-styles";
 @import "../abstracts/color-styles";
 @import "../components/button";
+@import "../components/carousel";
+@import "../components/grid-position";
 
 .animals-cards-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 1106px;
+    padding-bottom: 97px;
     button {
         width: 298px;
         height: 54px;
@@ -33,7 +35,7 @@
 .animals-cards {
     display: flex;
     align-items: center;
-    max-width: 1322px;
+    width: calc(84vw - 20px);
     margin: 0 auto;
     .left-right {
         width: 62px;
@@ -55,28 +57,23 @@
     }
     .left-button {
         background-image: url(../assets/svg/arr_left.svg);
-        margin: 0 22px 4px -22px;
     }
     .right-button {
         background-image: url(../assets/svg/arr_right.svg);
-        margin: 0 -20px 4px 20px;
     }
 }
 .cards {
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 30px;
     grid-row-gap: 20px;
-    max-width: 1158px;
-    height: 872px;
+    width: calc(74vw - 26px);
     background-color: $color-white;
     margin: 0 auto;
     .card {
         display: flex;
         flex-direction: column;
-        width: 366px;
-        height: 426px;
+        width: calc(24vw - 18px);
         border: solid 1px #fe9013;
         border-radius: 5px;
         transition: background-size 1000ms;
@@ -93,46 +90,6 @@
                 transition: transform 1000ms, color 1000ms;
             }
         }
-    }
-    .one {
-        grid-area: 1 / 1 / 2 / 2;
-        .img {
-            background-image: url(../assets/images/pandas.jpg);
-        }
-    }
-    .two {
-        grid-area: 1 / 2 / 2 / 3;
-        .img {
-            background-image: url(../assets/images/eagles.jpg);
-        }
-    }
-    .three {
-        grid-area: 1 / 3 / 2 / 4;
-        .img {
-            background-image: url(../assets/images/gorillas.jpg);
-        }
-    }
-    .four {
-        grid-area: 2 / 1 / 3 / 2;
-        .img {
-            background-image: url(../assets/images/sloth.jpg);
-        }
-    }
-    .fife {
-        grid-area: 2 / 2 / 3 / 3;
-        .img {
-            background-image: url(../assets/images/cheetahs.jpg);
-        }
-    }
-    .six {
-        grid-area: 2 / 3 / 3 / 4;
-        .img {
-            background-image: url(../assets/images/penguins.jpg);
-        }
-    }
-    .seven {
-        grid-area: 2 / 4 / 3 / 5;
-        display: none;
     }
     .img {
         background-repeat: no-repeat;
@@ -169,10 +126,7 @@
 
 @media (max-width: 1400px) {
     .animals-cards-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 1076px;
+        padding-bottom: 137px;
         button {
             width: 298px;
             height: 54px;
@@ -194,7 +148,7 @@
         }
     }
     .animals-cards {
-        max-width: 940px;
+        width: calc(100vw - 20px);
         position: relative;
         .left-right {
             position: absolute;
@@ -203,71 +157,26 @@
             height: 62px;
         }
         .left-button {
+            position: absolute;
+            z-index: 2;
             background-image: url(../assets/svg/arr_left.svg);
-            left: 36.7%;
+            left: 35%;
         }
         .right-button {
             background-image: url(../assets/svg/arr_right.svg);
-            right: 36.4%;
+            right: 35%;
         }
     }
     .cards {
         grid-column-gap: 29px;
         grid-row-gap: 92px;
-        max-width: 940px;
-        height: 801px;
+        width: calc(97vw - 26px);
         .card {
-            max-width: 294px;
-            max-height: 354px;
+            width: calc(30vw - 5px);
         }
-        .one {
-            grid-area: 1 / 1 / 2 / 2;
-            .img {
-                background-image: url(../assets/images/pandas.jpg);
-            }
-        }
-        .two {
-            grid-area: 1 / 2 / 2 / 3;
-            .img {
-                background-image: url(../assets/images/eagles.jpg);
-            }
-        }
-        .three {
-            grid-area: 2 / 1 / 3 / 2;
-            .img {
-                background-image: url(../assets/images/gorillas.jpg);
-            }
-        }
-        .four {
-            grid-area: 2 / 4 / 3 / 5;
-            display: none;
-        }
-        .fife {
-            grid-area: 1 / 3 / 2 / 4;
-            .img {
-                background-image: url(../assets/images/cheetahs.jpg);
-            }
-        }
-        .six {
-            grid-area: 2 / 3 / 3 / 4;
-            .img {
-                background-image: url(../assets/images/penguins.jpg);
-            }
-        }
-        .seven {
-            grid-area: 2 / 2 / 3 / 3;
-            display: block;
-            .img {
-                background-image: url(../assets/images/alligators.jpg);
-            }
-        }
-
         .img {
             height: 295px;
             background-size: 101%;
-        }
-        .description {
-            height: 59px;
         }
         .banana {
             background-image: url(../assets/svg/banana-bamboo_icon.svg);
@@ -282,9 +191,9 @@
 
 @media (max-width: 950px) {
     .animals-cards-container {
-        height: 971px;
+        padding-bottom: 101px;
         button {
-            margin-top: 16px;
+            margin-top: 59px;
         }
         .palm {
             top: 1649px;
@@ -298,69 +207,32 @@
         }
     }
     .animals-cards {
-        max-width: 600px;
+        width: 100%;
         .left-right {
             top: 343px;
         }
         .left-button {
             background-image: url(../assets/svg/arr_left.svg);
-            left: 41%;
+            left: 37.5%;
         }
         .right-button {
             background-image: url(../assets/svg/arr_right.svg);
-            right: 40.5%;
+            right: 37.5%;
         }
     }
     .cards {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         grid-column-gap: 30px;
-        grid-row-gap: 49px;
-        max-width: 600px;
+        grid-row-gap: 91px;
+        width: calc(95vw - 8px);
         .card {
-            max-width: 285px;
-            max-height: 332px;
+            width: calc(46vw - 9px);
         }
-        .one {
-            grid-area: 1 / 1 / 2 / 2;
-            .img {
-                background-image: url(../assets/images/pandas.jpg);
-            }
-        }
-        .two {
-            grid-area: 1 / 2 / 2 / 3;
-            .img {
-                background-image: url(../assets/images/eagles.jpg);
-            }
-        }
-        .three {
-            grid-area: 2 / 1 / 3 / 2;
-            .img {
-                background-image: url(../assets/images/gorillas.jpg);
-            }
-        }
-        .four {
-            display: none;
-        }
-        .fife {
-            display: none;
-        }
-        .six {
-            display: none;
-        }
-        .seven {
-            grid-area: 2 / 2 / 3 / 3;
-            display: block;
-            .img {
-                background-image: url(../assets/images/alligators.jpg);
-            }
-        }
-
         .img {
             height: 285px;
         }
         .description {
-            height: 46px;
             padding-left: 10px;
             h3 {
                 font-size: 13px;
@@ -368,6 +240,7 @@
             }
             p {
                 font-size: 12px;
+                margin-bottom: 8px;
             }
         }
         .banana {
@@ -383,7 +256,7 @@
 
 @media (max-width: 610px) {
     .animals-cards-container {
-        height: 1522px;
+        padding-bottom: 58px;
         button {
             margin-top: 20px;
         }
@@ -399,7 +272,6 @@
         }
     }
     .animals-cards {
-        max-width: 300px;
         .left-right {
             display: none;
         }
@@ -409,24 +281,9 @@
         grid-template-rows: repeat(4, 1fr);
         grid-column-gap: 0px;
         grid-row-gap: 20px;
-        max-width: 300px;
-        height: 1388px;
-
+        width: calc(91vw - 8px);
         .card {
-            max-width: 285px;
-            max-height: 332px;
-        }
-        .one {
-            grid-area: 1 / 1 / 2 / 2;
-        }
-        .two {
-            grid-area: 2 / 1 / 3 / 2;
-        }
-        .three {
-            grid-area: 3 / 1 / 4 / 2;
-        }
-        .seven {
-            grid-area: 4 / 1 / 5 / 2;
+            width: calc(91vw - 9px);
         }
     }
 }
