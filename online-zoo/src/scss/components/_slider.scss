@@ -1,0 +1,23 @@
+@import "./testimonials-card";
+
+.testimonials-cards {
+    position: relative;
+    width: 100%;
+}
+.testimonials-cards-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.testimonials-card {
+    position: relative;
+    display: none;
+    animation: 1500ms ease-out;
+}
+.active,
+.next {
+    display: block;
+}

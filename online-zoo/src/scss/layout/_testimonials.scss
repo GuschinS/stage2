@@ -1,7 +1,7 @@
 @import "../abstracts/text-styles";
 @import "../abstracts/color-styles";
 @import "../components/button";
-@import "../components/testimonials-card";
+@import "../components/slider";
 
 .testimonials {
     display: flex;
@@ -9,14 +9,16 @@
     align-items: center;
     margin: 140px auto 179px;
     width: 72.5%;
-    height: 600px;
+    // width: 80.5%;
+
+    // height: 600px;
     h2 {
         margin: 1px 0 46px;
         color: $color-black-blue;
         @include h3-36;
     }
     .line-scroll {
-        margin: 22px 0;
+        margin: 22px 0 11px;
         -webkit-appearance: none;
         appearance: none;
         width: 599px;
@@ -71,7 +73,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 391px;
+    // height: 391px;
     margin: 0 auto;
 }
 
@@ -130,9 +132,10 @@
         }
     }
 
-    .testimonials-cards {
+    .testimonials-cards-container {
         flex-direction: column;
         justify-content: space-evenly;
+        margin: 18px auto 2px;
     }
 }
 
