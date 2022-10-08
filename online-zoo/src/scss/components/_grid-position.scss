@@ -267,10 +267,12 @@
         .three {
             grid-area: 3 / 1 / 4 / 2;
         }
-        .seven {
+        .four {
             grid-area: 4 / 1 / 5 / 2;
         }
-
+        .card.seven {
+            grid-area: 4 / 1 / 5 / 2;
+        }
         .one-two,
         .one-three,
         .two-two,
