@@ -37,15 +37,17 @@ function nextItem(n) {
   changeCurrentItem(n + 1);
   showItem("from-right");
 }
-
-leftButton.addEventListener("click", function () {
-  if (isEnable) {
-    previousItem(currentItem);
-  }
-});
-
-rightButton.addEventListener("click", function () {
-  if (isEnable) {
-    nextItem(currentItem);
-  }
-});
+if (leftButton) {
+  leftButton.addEventListener("click", function () {
+    if (isEnable) {
+      previousItem(currentItem);
+    }
+  });
+}
+if (rightButton) {
+  rightButton.addEventListener("click", function () {
+    if (isEnable) {
+      nextItem(currentItem);
+    }
+  });
+}
