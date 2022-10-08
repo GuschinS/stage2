@@ -1,0 +1,285 @@
+.cards {
+    .one {
+        grid-area: 1 / 1 / 2 / 2;
+        .img {
+            background-image: url(../assets/images/pandas.jpg);
+        }
+    }
+    .two {
+        grid-area: 1 / 2 / 2 / 3;
+        .img {
+            background-image: url(../assets/images/eagles.jpg);
+        }
+    }
+    .three {
+        grid-area: 1 / 3 / 2 / 4;
+        .img {
+            background-image: url(../assets/images/gorillas.jpg);
+        }
+    }
+    .four {
+        grid-area: 2 / 1 / 3 / 2;
+        .img {
+            background-image: url(../assets/images/sloth.jpg);
+        }
+    }
+    .fife {
+        grid-area: 2 / 2 / 3 / 3;
+        .img {
+            background-image: url(../assets/images/cheetahs.jpg);
+        }
+    }
+    .six {
+        grid-area: 2 / 3 / 3 / 4;
+        .img {
+            background-image: url(../assets/images/penguins.jpg);
+        }
+    }
+    .card.seven {
+        grid-area: 2 / 4 / 3 / 5;
+        display: none;
+    }
+    .one-two {
+        grid-area: 2 / 3 / 3 / 4;
+        .img {
+            background-image: url(../assets/images/pandas.jpg);
+        }
+    }
+    .two-two {
+        grid-area: 2 / 2 / 3 / 3;
+        .img {
+            background-image: url(../assets/images/eagles.jpg);
+        }
+    }
+    .three-two {
+        grid-area: 2 / 1 / 3 / 2;
+        .img {
+            background-image: url(../assets/images/gorillas.jpg);
+        }
+    }
+    .four-two {
+        grid-area: 1 / 3 / 2 / 4;
+        .img {
+            background-image: url(../assets/images/sloth.jpg);
+        }
+    }
+    .fife-two {
+        grid-area: 1 / 2 / 2 / 3;
+        .img {
+            background-image: url(../assets/images/cheetahs.jpg);
+        }
+    }
+    .six-two {
+        grid-area: 1 / 1 / 2 / 2;
+
+        .img {
+            background-image: url(../assets/images/penguins.jpg);
+        }
+    }
+    .card.seven-two {
+        grid-area: 2 / 4 / 3 / 5;
+        display: none;
+    }
+    .one-three {
+        grid-area: 1 / 3 / 2 / 4;
+        .img {
+            background-image: url(../assets/images/pandas.jpg);
+        }
+    }
+    .two-three {
+        grid-area: 1 / 2 / 2 / 3;
+        .img {
+            background-image: url(../assets/images/eagles.jpg);
+        }
+    }
+    .three-three {
+        grid-area: 1 / 1 / 2 / 2;
+        .img {
+            background-image: url(../assets/images/gorillas.jpg);
+        }
+    }
+    .four-three {
+        grid-area: 2 / 3 / 3 / 4;
+
+        .img {
+            background-image: url(../assets/images/sloth.jpg);
+        }
+    }
+    .fife-three {
+        grid-area: 2 / 2 / 3 / 3;
+        .img {
+            background-image: url(../assets/images/cheetahs.jpg);
+        }
+    }
+    .six-three {
+        grid-area: 2 / 1 / 3 / 2;
+        .img {
+            background-image: url(../assets/images/penguins.jpg);
+        }
+    }
+    .card.seven-three {
+        grid-area: 1 / 4 / 2 / 5;
+        display: none;
+    }
+}
+
+@media (max-width: 1400px) {
+    .cards {
+        .one {
+            grid-area: 1 / 1 / 2 / 2;
+            .img {
+                background-image: url(../assets/images/pandas.jpg);
+            }
+        }
+        .two {
+            grid-area: 1 / 2 / 2 / 3;
+            .img {
+                background-image: url(../assets/images/eagles.jpg);
+            }
+        }
+        .three {
+            grid-area: 2 / 1 / 3 / 2;
+            .img {
+                background-image: url(../assets/images/gorillas.jpg);
+            }
+        }
+        .card.four {
+            grid-area: 2 / 4 / 3 / 5;
+            display: none;
+        }
+        .fife {
+            grid-area: 1 / 3 / 2 / 4;
+            .img {
+                background-image: url(../assets/images/cheetahs.jpg);
+            }
+        }
+        .six {
+            grid-area: 2 / 3 / 3 / 4;
+            .img {
+                background-image: url(../assets/images/penguins.jpg);
+            }
+        }
+        .card.seven {
+            grid-area: 2 / 2 / 3 / 3;
+            display: block;
+            .img {
+                background-image: url(../assets/images/alligators.jpg);
+            }
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .cards {
+        .one {
+            grid-area: 1 / 1 / 2 / 2;
+            .img {
+                background-image: url(../assets/images/pandas.jpg);
+            }
+        }
+        .two {
+            grid-area: 1 / 2 / 2 / 3;
+            .img {
+                background-image: url(../assets/images/eagles.jpg);
+            }
+        }
+        .three {
+            grid-area: 2 / 1 / 3 / 2;
+            .img {
+                background-image: url(../assets/images/gorillas.jpg);
+            }
+        }
+        .card.fife,
+        .card.fife-two,
+        .card.fife-three,
+        .card.six,
+        .card.six-two,
+        .card.six-three,
+        .card.seven-two,
+        .card.seven-three {
+            display: none;
+        }
+        .seven {
+            grid-area: 2 / 2 / 3 / 3;
+            display: block;
+            .img {
+                background-image: url(../assets/images/alligators.jpg);
+            }
+        }
+        .one-two {
+            grid-area: 1 / 2 / 2 / 3;
+            .img {
+                background-image: url(../assets/images/pandas.jpg);
+            }
+        }
+        .two-two {
+            grid-area: 2 / 2 / 3 / 3;
+            .img {
+                background-image: url(../assets/images/eagles.jpg);
+            }
+        }
+        .three-two {
+            grid-area: 2 / 1 / 3 / 2;
+            .img {
+                background-image: url(../assets/images/gorillas.jpg);
+            }
+        }
+        .four-two {
+            grid-area: 1 / 1 / 2 / 2;
+            .img {
+                background-image: url(../assets/images/sloth.jpg);
+            }
+        }
+        .one-three {
+            grid-area: 2 / 2 / 3 / 3;
+            .img {
+                background-image: url(../assets/images/pandas.jpg);
+            }
+        }
+        .two-three {
+            grid-area: 1 / 2 / 2 / 3;
+            .img {
+                background-image: url(../assets/images/eagles.jpg);
+            }
+        }
+        .three-three {
+            grid-area: 1 / 1 / 2 / 2;
+            .img {
+                background-image: url(../assets/images/gorillas.jpg);
+            }
+        }
+        .four-three {
+            grid-area: 2 / 1 / 3 / 2;
+            .img {
+                background-image: url(../assets/images/sloth.jpg);
+            }
+        }
+    }
+}
+@media (max-width: 610px) {
+    .cards {
+        .one {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+        .two {
+            grid-area: 2 / 1 / 3 / 2;
+        }
+        .three {
+            grid-area: 3 / 1 / 4 / 2;
+        }
+        .seven {
+            grid-area: 4 / 1 / 5 / 2;
+        }
+
+        .one-two,
+        .one-three,
+        .two-two,
+        .two-three,
+        .three-two,
+        .three-three,
+        .four-two,
+        .four-three {
+            display: none;
+        }
+    }
+}

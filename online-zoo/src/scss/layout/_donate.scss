@@ -245,6 +245,7 @@ input[type="number"] {
 
     option {
         width: 66px;
+        cursor: pointer;
         &.black {
             color: $color-black;
         }
@@ -253,6 +254,7 @@ input[type="number"] {
         }
         &::before {
             content: url(../assets/svg/dollar.svg);
+            // filter: invert(0%) sepia(0%) saturate(3%) hue-rotate(164deg) brightness(20%) contrast(100%);
         }
     }
     & option:nth-child(1) {
