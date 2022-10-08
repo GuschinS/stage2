@@ -81,20 +81,20 @@
           <p class="amount">Amount</p>
         </div>
         <form action="#" class="donate-form">
-          <input type="range" name="range" id="range-donate" class="range-donate" min="1" max="8" step="1" value="3"
+          <input type="range" name="range" id="range-donate" class="range-donate" min="1" max="8" step="1" value="6"
             list="tickmarks">
           <datalist id="tickmarks" class="tickmarks">
             <option class="option" value="1" label="5000"></option>
             <option class="option" value="2" label="2000"></option>
-            <option class="option yellow" value="3" label="1000"></option>
+            <option class="option" value="3" label="1000"></option>
             <option class="option" value="4" label="500"></option>
             <option class="option" value="5" label="250"></option>
-            <option class="option" value="6" label="100"></option>
+            <option class="option  yellow" value="6" label="100"></option>
             <option class="option" value="7" label="50"></option>
             <option class="option" value="8" label="25"></option>
           </datalist>
-          <input type="number" name="number" id="number" class="number" min="1" max="9999" placeholder="Another amount"
-            required>
+          <input type="number" name="number" id="number" class="number" value="100" min="1" max="9999"
+            pattern="[0-9]{3}  placeholder=" Another amount" required>
           <div class="radio">
             <input type="radio" name="radio" id="monthly" class="monthly">
             <label for="monthly" class="label-monthly">Monthly</label>
@@ -120,7 +120,8 @@
           <form action="#">
             <label for="email" class="email">Subscribe to our news</label>
             <div class="email-submit">
-              <input type="email" id="email" size="30" placeholder="Enter your email" required>
+              <input type="email" id="email" size="30" placeholder="Enter your email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
               <input type="submit" class="submit" value="Submit" />
             </div>
           </form>

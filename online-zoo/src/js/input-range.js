@@ -1,14 +1,19 @@
 const inputRange = document.querySelector(".range-donate");
 const tickmarks = document.querySelector(".tickmarks");
 const inputNumber = document.querySelector(".number");
-const options = document.querySelectorAll(".option");
+// const options = document.querySelectorAll(".option");
 const wh1400 = window.matchMedia("(max-width: 1400px)");
 const wh950 = window.matchMedia("(max-width: 950px)");
 const yellowElement = document.querySelector(
   ".tickmarks .option:nth-child(6) "
 );
-// const yellow950 = document.querySelector(".tickmarks .option:nth-child(6)");
+const options = document.querySelectorAll(".tickmarks .option");
 const screenWidth = window.screen.width;
+
+// ограничивает количество введеных символов в намбер инпут
+inputNumber.oninput = function () {
+  this.value = this.value.substr(0, 4);
+};
 
 window.onload = function () {
   addRangeClickHendler();
@@ -19,7 +24,6 @@ window.onload = function () {
 
 // сбрасывает все выбранные
 const removeYellowClass = () => {
-  let options = document.querySelectorAll(".tickmarks .option");
   options.forEach((option) => {
     option.classList.remove("yellow");
     option.classList.add("black");
@@ -101,15 +105,36 @@ const addInputNumberValueHendler = () => {
   inputNumber.addEventListener("input", (e) => {
     let inputNumberValue = e.target.value;
     findElementByInput(inputNumberValue);
+    // console.log("inputNumberValue: ", inputNumberValue);
   });
 };
 // изменяет выбранное число и позицию на рейндж инпуте в зависимости от введенного числа
 const findElementByInput = (inputNumberValue) => {
+  if (
+    +inputNumberValue != 5000 ||
+    +inputNumberValue != 2000 ||
+    +inputNumberValue != 1000 ||
+    +inputNumberValue != 500 ||
+    +inputNumberValue != 250 ||
+    +inputNumberValue != 100 ||
+    +inputNumberValue != 50 ||
+    +inputNumberValue != 25
+  ) {
+    removeYellowClass();
+  }
   options.forEach((option) => {
     if (option.label === inputNumberValue) {
       removeYellowClass();
-      selectClickedOption(option);
-      inputRange.value = option.value;
+      if (screenWidth <= 950) {
+        inputRange.value = +option.value - 3;
+        selectClickedOption(option);
+      } else if (screenWidth <= 1400) {
+        inputRange.value = +option.value - 1;
+        selectClickedOption(option);
+      } else {
+        inputRange.value = option.value;
+        selectClickedOption(option);
+      }
     }
   });
 };
