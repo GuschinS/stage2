@@ -153,6 +153,7 @@ function addLineScrollHandler() {
 function removedCardFour() {
   if (cardFour) {
     if (screenWidth <= 950) {
+      cardFour.classList.remove("active");
     } else if (screenWidth <= 1400) {
       cardFour.classList.remove("active");
     } else {
