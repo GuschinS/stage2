@@ -10,7 +10,6 @@ const popupTestimonialsHandler = (card) => {
   const testimonialsCardCopy = card.cloneNode(true);
   testimonialPopup.innerHTML = "";
   testimonialsCardCopy.remove();
-  popupCloseButton.remove();
   testimonialPopup.append(testimonialsCardCopy, popupCloseButton);
   testimonialsCardCopy.classList.toggle("open-card");
 };
@@ -21,9 +20,15 @@ testimonialsCard.forEach((card) => {
   });
 });
 
-popupCloseButton.addEventListener("click", popupTestimonialsHandler);
-testimonialsBackground.addEventListener("click", (e) => {
-  if (e.target === testimonialsBackground) {
-    popupTestimonialsHandler();
-  }
-});
+const closePopup = () => {
+  testimonialsBackground.classList.toggle("open");
+  popupCloseButton.remove();
+};
+if (popupCloseButton) {
+  popupCloseButton.addEventListener("click", closePopup);
+  testimonialsBackground.addEventListener("click", (e) => {
+    if (e.target === testimonialsBackground) {
+      closePopup();
+    }
+  });
+}
