@@ -580,8 +580,5 @@ input[type="number"] {
         & option:nth-child(3) {
             display: none;
         }
-        & option:nth-child(6) {
-            color: $color-orange-light;
-        }
     }
 }
