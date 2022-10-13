@@ -51,12 +51,17 @@ function addRangeClickHandler() {
       let clickedRangeValue = e.target.value;
       if (screenWidth <= 950) {
         clickedRangeValue = +clickedRangeValue + 3;
+        style.innerHTML =
+          ".range-donate::-webkit-slider-thumb {display: block}";
       } else if (screenWidth <= 1400) {
         clickedRangeValue = +clickedRangeValue + 1;
+        style.innerHTML =
+          ".range-donate::-webkit-slider-thumb {display: block}";
       }
       removeYellowClass();
       addValueFromRange(clickedRangeValue);
       changeInputNumberFromRange(clickedRangeValue);
+      style.innerHTML = ".range-donate::-webkit-slider-thumb {display: block}";
     });
   }
 }
@@ -69,13 +74,18 @@ const addTickmarksClickHandler = () => {
       let clickedValue = e.target.value;
       if (screenWidth <= 950) {
         clickedValue = +clickedValue - 3;
+        style.innerHTML =
+          ".range-donate::-webkit-slider-thumb {display: block}";
       } else if (screenWidth <= 1400) {
         clickedValue = +clickedValue - 1;
+        style.innerHTML =
+          ".range-donate::-webkit-slider-thumb {display: block}";
       }
       removeYellowClass();
       selectClickedOption(clickedOption);
       selectClickedValue(clickedValue);
       changeInputNumber(label);
+      style.innerHTML = ".range-donate::-webkit-slider-thumb {display: block}";
     });
   }
 };
@@ -132,6 +142,7 @@ const findElementByInput = (inputNumberValue) => {
     removeYellowClass();
     style.innerHTML = ".range-donate::-webkit-slider-thumb { display: none }";
   }
+
   options.forEach((option) => {
     if (option.label === inputNumberValue) {
       removeYellowClass();
@@ -139,9 +150,21 @@ const findElementByInput = (inputNumberValue) => {
       if (screenWidth <= 950) {
         inputRange.value = +option.value - 3;
         selectClickedOption(option);
+        if (
+          inputNumberValue == 5000 ||
+          inputNumberValue == 2000 ||
+          inputNumberValue == 1000
+        ) {
+          style.innerHTML =
+            ".range-donate::-webkit-slider-thumb { display: none }";
+        }
       } else if (screenWidth <= 1400) {
         inputRange.value = +option.value - 1;
         selectClickedOption(option);
+        if (inputNumberValue == 5000) {
+          style.innerHTML =
+            ".range-donate::-webkit-slider-thumb { display: none }";
+        }
       } else {
         inputRange.value = option.value;
         selectClickedOption(option);
