@@ -1,0 +1,1 @@
+{"version":3,"file":"main.8c7012e6f74d70302155.css","mappings":"AAAA,MACI,cAGJ,GACI,YACA,aACA,yB","sources":["webpack://gem-puzzle/./src/scss/main.scss"],"sourcesContent":["table {\r\n    margin: 0 auto;\r\n}\r\n\r\ntd {\r\n    width: 100px;\r\n    height: 100px;\r\n    background-color: rgb(76, 123, 145);\r\n}\r\n"],"names":[],"sourceRoot":""}
