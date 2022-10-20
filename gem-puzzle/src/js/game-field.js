@@ -60,6 +60,13 @@ container.addEventListener("click", (event) => {
   }
 });
 
+//Mute
+
+volume.addEventListener("click", () => {
+  volume.classList.toggle("mute");
+  volume.classList.toggle("no-mute");
+});
+
 //Functions
 
 function createGameField() {

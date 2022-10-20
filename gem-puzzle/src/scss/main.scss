@@ -7,24 +7,24 @@ main {
     text-align: center;
     margin: 0 auto;
     user-select: none;
-    // .control-container {
-    //     display: flex;
-    //     justify-content: space-around;
-    //     .volume {
-    //         width: 20px;
-    //         height: 20px;
-    //         cursor: pointer;
-    //     }
-    //     .mute {
-    //         background-image: url(../assets/svg/mute.svg);
-    //     }
-    //     .no-mute {
-    //         background-image: url(../assets/svg/no_mute.svg);
-    //     }
-    // }
+    .control-container {
+        display: flex;
+        justify-content: space-around;
+        .volume {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .mute {
+            background-image: url(../assets/svg/mute.svg);
+        }
+        .no-mute {
+            background-image: url(../assets/svg/no_mute.svg);
+        }
+    }
     .container {
         // opacity: 0.1;
-        // filter: blur(0.5rem);
+        filter: blur(0.5rem);
         background-color: rgba(0, 0, 0, 0.1);
         position: relative;
         width: 100%;
@@ -32,8 +32,7 @@ main {
         padding-bottom: 100%;
         &.play {
             // opacity: 1;
-            // filter: blur(0);
-
+            filter: blur(0);
             transition: all 300ms;
         }
     }
