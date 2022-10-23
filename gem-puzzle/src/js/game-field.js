@@ -1,15 +1,47 @@
-import { h1, buttonStart, controlContainer } from "./control";
+import {
+  h1,
+  buttonStart,
+  buttonStop,
+  controlContainer,
+  buttonContainer,
+} from "./control";
+import { checkMatrix, check } from "./algorithm-check";
+
 import click from "../assets/sound/click.mp3";
 import error from "../assets/sound/error.mp3";
 
 const body = document.querySelector("body");
 const main = document.createElement("main");
 const container = document.createElement("div");
+const timerDiv = controlContainer.querySelector(".timer-display");
 const volume = controlContainer.querySelector(".volume");
 const values = new Array(16).fill(0).map((item, index) => {
   index;
 });
 let score = 0;
+let int = null;
+
+let [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+
+function displayTimer() {
+  milliseconds += 10;
+  if (milliseconds == 1000) {
+    milliseconds = 0;
+    seconds++;
+    if (seconds == 60) {
+      seconds = 0;
+      minutes++;
+      if (minutes == 60) {
+        minutes = 0;
+        hours++;
+      }
+    }
+  }
+  let h = hours < 10 ? "0" + hours : hours;
+  let m = minutes < 10 ? "0" + minutes : minutes;
+  let s = seconds < 10 ? "0" + seconds : seconds;
+  timerDiv.textContent = ` ${h} : ${m} : ${s}`;
+}
 
 //Create
 
@@ -22,16 +54,69 @@ let matrix = getMatrix(items.map((item) => item.dataset.matrixId));
 
 setPositionItems(matrix);
 
+//Start & Reset & Stop
+
+const handlerStartStopReset = () => {
+  if (buttonStart.classList.value === "button-start start") {
+    buttonStart.classList.remove("start");
+    buttonStart.classList.add("reset");
+    buttonStart.textContent = "reset";
+    buttonContainer.classList.remove("stop");
+    container.classList.add("play");
+    buttonStop.classList.remove("display-none");
+  } else if (buttonStart.classList.value === "button-start") {
+    buttonStart.classList.add("reset");
+    buttonStart.textContent = "reset";
+    buttonContainer.classList.remove("stop");
+    container.classList.add("play");
+    buttonStop.classList.remove("display-none");
+  }
+};
+
+//Stop
+
+buttonStop.addEventListener("click", () => {
+  buttonStart.classList.remove("reset");
+  buttonStart.textContent = "start";
+  buttonStop.classList.add("display-none");
+  buttonContainer.classList.add("stop");
+  container.classList.remove("play");
+  clearInterval(int);
+});
+
 //Start & Shuffle
 
 buttonStart.addEventListener("click", () => {
-  const shuffledArray = shuffleArray(matrix.flat());
-  matrix = getMatrix(shuffledArray);
-  setPositionItems(matrix);
-  const scoreDiv = document.querySelector(".score");
-  score = 0;
-  scoreDiv.textContent = `Score: ${score}`;
-  container.classList.add("play");
+  if (buttonStart.classList.value === "button-start") {
+    if (int !== null) {
+      clearInterval(int);
+      handlerStartStopReset();
+    }
+    int = setInterval(displayTimer, 10);
+  } else if (
+    buttonStart.classList.value === "button-start reset" ||
+    buttonStart.classList.value === "button-start start"
+  ) {
+    handlerStartStopReset();
+    const shuffledArray = shuffleArray(matrix.flat());
+    matrix = getMatrix(shuffledArray);
+    checkMatrix(matrix);
+    while (check % 2 != 0) {
+      const shuffledArray = shuffleArray(matrix.flat());
+      matrix = getMatrix(shuffledArray);
+      checkMatrix(matrix);
+    }
+    setPositionItems(matrix);
+    if (int !== null) {
+      clearInterval(int);
+      [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+    }
+    int = setInterval(displayTimer, 10);
+    const scoreDiv = document.querySelector(".score");
+    score = 0;
+    scoreDiv.textContent = `Score: ${score}`;
+    container.classList.add("play");
+  }
 });
 
 const blankNumber = 16;
@@ -42,13 +127,34 @@ container.addEventListener("click", (event) => {
   const blankCoords = findCoordinatesByNumber(blankNumber, matrix);
   const isValid = isValidForSwap(buttonCoords, blankCoords);
   const scoreDiv = document.querySelector(".score");
-
+  const endArray = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+  ];
   if (isValid) {
     swap(blankCoords, buttonCoords, matrix);
     setPositionItems(matrix);
     score += 1;
     scoreDiv.textContent = `Score: ${score}`;
     const clickItem = new Audio(click);
+
+    if (JSON.stringify(endArray) == JSON.stringify(matrix.flat())) {
+      console.log("HURRRAAA!!!! Jesteś zwyczącą!!!");
+    }
     if (volume.classList.value != "volume mute") {
       clickItem.play();
     }
@@ -81,7 +187,10 @@ function createGameField() {
     container.append(button);
   }
   main.append(container);
-  main.append(buttonStart);
+  main.append(buttonContainer);
+  buttonContainer.append(buttonStart);
+  buttonContainer.append(buttonStop);
+
   body.append(main);
 }
 

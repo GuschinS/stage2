@@ -23,17 +23,17 @@ main {
         }
     }
     .container {
-        // opacity: 0.1;
         filter: blur(0.5rem);
         background-color: rgba(0, 0, 0, 0.1);
         position: relative;
         width: 100%;
         margin-bottom: 1.5rem;
         padding-bottom: 100%;
+        pointer-events: none;
         &.play {
-            // opacity: 1;
             filter: blur(0);
             transition: all 300ms;
+            pointer-events: all;
         }
     }
     .item {
@@ -49,13 +49,28 @@ main {
         box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 1);
         background-color: #fff;
         transition: transform 300ms;
+        cursor: pointer;
         &:nth-child(16) {
             display: none;
         }
     }
-    .button-start {
-        font-size: 2rem;
+    .button-container {
+        transition: all 500ms;
+    }
+    .button-container.stop {
+        // position: relative;
+        // bottom: 200px;
+        transform: translateY(-250px);
+        transition: all 500ms;
+    }
+    .button-start,
+    .button-stop {
+        font-size: 1rem;
         padding: 0.5em 1.5em;
         text-transform: uppercase;
+        margin: 0 10px;
+    }
+    .display-none {
+        display: none;
     }
 }
