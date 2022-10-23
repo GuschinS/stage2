@@ -1,24 +1,21 @@
-import {
-  h1,
-  buttonStart,
-  buttonStop,
-  controlContainer,
-  buttonContainer,
-} from "./control";
 import { checkMatrix, check } from "./algorithm-check";
-
 import click from "../assets/sound/click.mp3";
 import error from "../assets/sound/error.mp3";
 
-const body = document.querySelector("body");
-const main = document.createElement("main");
-const container = document.createElement("div");
-const timerDiv = controlContainer.querySelector(".timer-display");
-const volume = controlContainer.querySelector(".volume");
+const container = document.querySelector(".container");
+const timerDiv = document.querySelector(".timer-display");
+const volume = document.querySelector(".volume");
+const buttonContainer = document.querySelector(".button-container");
+const buttonStart = buttonContainer.querySelector(".button-start");
+const buttonStop = buttonContainer.querySelector(".button-stop");
+const gameOverBackground = document.querySelector(".game-over-background");
+const movesDiv = document.querySelector(".moves");
+const h2 = document.querySelector("h2");
+
 const values = new Array(16).fill(0).map((item, index) => {
   index;
 });
-let score = 0;
+let moves = 0;
 let int = null;
 
 let [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
@@ -112,9 +109,9 @@ buttonStart.addEventListener("click", () => {
       [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
     }
     int = setInterval(displayTimer, 10);
-    const scoreDiv = document.querySelector(".score");
-    score = 0;
-    scoreDiv.textContent = `Score: ${score}`;
+    const movesDiv = document.querySelector(".moves");
+    moves = 0;
+    movesDiv.textContent = `Moves: ${moves}`;
     container.classList.add("play");
   }
 });
@@ -126,7 +123,6 @@ container.addEventListener("click", (event) => {
   const buttonCoords = findCoordinatesByNumber(buttonNumber, matrix);
   const blankCoords = findCoordinatesByNumber(blankNumber, matrix);
   const isValid = isValidForSwap(buttonCoords, blankCoords);
-  const scoreDiv = document.querySelector(".score");
   const endArray = [
     "1",
     "2",
@@ -148,12 +144,12 @@ container.addEventListener("click", (event) => {
   if (isValid) {
     swap(blankCoords, buttonCoords, matrix);
     setPositionItems(matrix);
-    score += 1;
-    scoreDiv.textContent = `Score: ${score}`;
+    moves += 1;
+    movesDiv.textContent = `Moves: ${moves}`;
     const clickItem = new Audio(click);
-
     if (JSON.stringify(endArray) == JSON.stringify(matrix.flat())) {
-      console.log("HURRRAAA!!!! Jesteś zwyczącą!!!");
+      gameOverBackground.classList.toggle("open");
+      h2.textContent = `Hooray! You solved the puzzle in ${timerDiv.textContent} and ${moves} moves!`;
     }
     if (volume.classList.value != "volume mute") {
       clickItem.play();
@@ -176,9 +172,6 @@ volume.addEventListener("click", () => {
 //Functions
 
 function createGameField() {
-  main.append(h1);
-  main.append(controlContainer);
-  container.classList = "container";
   for (let value in values) {
     const button = document.createElement("button");
     button.classList = "item";
@@ -186,12 +179,6 @@ function createGameField() {
     button.innerHTML = Number(value) + 1;
     container.append(button);
   }
-  main.append(container);
-  main.append(buttonContainer);
-  buttonContainer.append(buttonStart);
-  buttonContainer.append(buttonStop);
-
-  body.append(main);
 }
 
 function getMatrix(arr) {
