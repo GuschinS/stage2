@@ -10,6 +10,7 @@ main {
     .control-container {
         display: flex;
         justify-content: space-around;
+        padding-bottom: 20px;
         .volume {
             width: 20px;
             height: 20px;
@@ -46,12 +47,26 @@ main {
         padding: 0;
         margin: 0;
         border: none;
+        border-radius: 2px;
         box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 1);
         background-color: #fff;
         transition: transform 300ms;
         cursor: pointer;
         &:nth-child(16) {
             display: none;
+        }
+    }
+    .field-selection {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        button {
+            padding: 5px 12px;
+            border: solid 1px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+        .active {
+            background-color: rgba(0, 0, 0, 0.4);
         }
     }
     .button-container {
@@ -69,8 +84,53 @@ main {
         padding: 0.5em 1.5em;
         text-transform: uppercase;
         margin: 0 10px;
+        border: solid 1px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
     }
     .display-none {
         display: none;
+    }
+}
+
+.game-over-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0.8);
+    &.open {
+        display: flex;
+    }
+    .pop-up-close-button {
+        display: block;
+        position: absolute;
+        left: 88%;
+        bottom: 363px;
+        width: 15px;
+        height: 15px;
+        background-image: url(../assets/svg/x_icon.svg);
+        background-repeat: no-repeat;
+    }
+}
+
+.game-over-pop-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    background: rgba(255, 254, 254);
+    border-radius: 20px;
+    text-align: center;
+    h2 {
+        margin-top: 50px;
+        color: rgba(0, 0, 0, 0.5);
+        padding: 0 2em;
     }
 }
