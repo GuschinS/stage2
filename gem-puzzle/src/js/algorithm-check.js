@@ -1,4 +1,22 @@
 let check = 0;
+const endArray = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+]; //массив для проверки выигрыша, для каждого размера должен быть свой.
 
 function checkMatrix(matrix) {
   let count = 0;
@@ -20,4 +38,4 @@ function checkMatrix(matrix) {
   return check;
 }
 
-export { checkMatrix, check };
+export { checkMatrix, check, endArray };
