@@ -9,7 +9,7 @@ const buttonStop = document.createElement("button");
 const movesDivCreate = document.createElement("div");
 const volume = document.createElement("div");
 const timerDiv = document.createElement("div");
-const fieldSelection = document.createElement("div");
+const sizeSelection = document.createElement("div");
 const buttonThree = document.createElement("button");
 const buttonFour = document.createElement("button");
 const buttonFife = document.createElement("button");
@@ -21,6 +21,11 @@ const gameOverBackground = document.createElement("div");
 const gameOverPopUp = document.createElement("div");
 const popUpCloseButton = document.createElement("span");
 const h2 = document.createElement("h2");
+const save = document.createElement("button");
+
+const resultsBackground = document.createElement("biv");
+const results = document.createElement("div");
+const resultsCloseButton = document.createElement("span");
 
 createPanelControl();
 
@@ -44,7 +49,7 @@ function createPanelControl() {
   buttonContainer.append(buttonStart);
   buttonContainer.append(buttonStop);
   container.classList = "container";
-  fieldSelection.classList = "field-selection";
+  sizeSelection.classList = "size-selection";
   buttonThree.classList = "button-three";
   buttonThree.textContent = `3 X 3`;
   buttonFour.classList = "button-four active";
@@ -58,23 +63,87 @@ function createPanelControl() {
   buttonEight.classList = "button-eight";
   buttonEight.textContent = `8 X 8`;
   popUpCloseButton.classList = "pop-up-close-button";
+  save.classList = "save";
+  save.textContent = "save";
   gameOverPopUp.classList = "game-over-pop-up";
   gameOverBackground.classList = "game-over-background";
-  fieldSelection.append(buttonThree);
-  fieldSelection.append(buttonFour);
-  fieldSelection.append(buttonFife);
-  fieldSelection.append(buttonSix);
-  fieldSelection.append(buttonSeven);
-  fieldSelection.append(buttonEight);
 
+  sizeSelection.append(buttonThree);
+  sizeSelection.append(buttonFour);
+  sizeSelection.append(buttonFife);
+  sizeSelection.append(buttonSix);
+  sizeSelection.append(buttonSeven);
+  sizeSelection.append(buttonEight);
   main.append(h1);
   main.append(controlContainer);
   main.append(container);
-  main.append(fieldSelection);
+  main.append(sizeSelection);
   main.append(buttonContainer);
   gameOverPopUp.append(popUpCloseButton);
   gameOverPopUp.append(h2);
+  gameOverPopUp.append(save);
   gameOverBackground.append(gameOverPopUp);
   body.append(main);
   body.append(gameOverBackground);
+  createTable();
+  console.log('localStorage.getItem("moves"): ', localStorage.getItem("moves"));
+}
+
+function createTable() {
+  const table = document.createElement("table");
+  const thead = document.createElement("thead");
+  const tbody = document.createElement("tbody");
+  const tr = document.createElement("tr");
+
+  results.classList = "results";
+  resultsBackground.classList = "results-background";
+  resultsCloseButton.classList = "results-close-button";
+  const thName = document.createElement("th");
+  thName.classList = "full-name";
+  thName.textContent = "Name";
+  const thTime = document.createElement("th");
+  thTime.classList = "time";
+  thTime.textContent = "Time";
+  const thMoves = document.createElement("th");
+  thMoves.classList = "moves";
+  thMoves.textContent = "Moves";
+  thead.append(thName);
+  thead.append(thTime);
+  thead.append(thMoves);
+  table.append(thead);
+  if (localStorage.getItem("inputName")) {
+    const tdName = document.createElement("td");
+    tdName.textContent = localStorage.getItem("inputName");
+    tr.append(tdName);
+  }
+  if (localStorage.getItem("time")) {
+    const tdTime = document.createElement("td");
+    tdTime.textContent = localStorage.getItem("time");
+    tr.append(tdTime);
+  }
+  if (localStorage.getItem("moves")) {
+    const tdMoves = document.createElement("td");
+    tdMoves.textContent = localStorage.getItem("moves");
+    tr.append(tdMoves);
+  }
+  tbody.append(tr);
+  table.append(tbody);
+  results.append(resultsCloseButton);
+  results.append(table);
+  createForm();
+  resultsBackground.append(results);
+  body.append(resultsBackground);
+}
+
+function createForm() {
+  const formResults = document.createElement("div");
+  const inputText = document.createElement("input");
+  const buttonAddResult = document.createElement("button");
+  formResults.classList = "form-result";
+  inputText.getAttribute("type", "text");
+  buttonAddResult.classList = "button-add-result";
+  buttonAddResult.textContent = "ADD";
+  formResults.append(inputText);
+  formResults.append(buttonAddResult);
+  results.append(formResults);
 }

@@ -1,4 +1,4 @@
-import { checkMatrix, check } from "./algorithm-check";
+import { checkMatrix, check, endArray } from "./algorithm-check";
 import click from "../assets/sound/click.mp3";
 import error from "../assets/sound/error.mp3";
 
@@ -12,12 +12,10 @@ const gameOverBackground = document.querySelector(".game-over-background");
 const movesDiv = document.querySelector(".moves");
 const h2 = document.querySelector("h2");
 
-const values = new Array(16).fill(0).map((item, index) => {
-  index;
-});
+let matrixLength = 16;
+let arrayLength = 4;
 let moves = 0;
 let int = null;
-
 let [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
 
 function displayTimer() {
@@ -116,31 +114,14 @@ buttonStart.addEventListener("click", () => {
   }
 });
 
-const blankNumber = 16;
+const blankNumber = matrixLength; // пустой элемент, для каждой длинны другой
+
 container.addEventListener("click", (event) => {
   const buttonNode = event.target.closest("button");
   const buttonNumber = Number(buttonNode.dataset.matrixId);
   const buttonCoords = findCoordinatesByNumber(buttonNumber, matrix);
   const blankCoords = findCoordinatesByNumber(blankNumber, matrix);
   const isValid = isValidForSwap(buttonCoords, blankCoords);
-  const endArray = [
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15",
-    "16",
-  ];
   if (isValid) {
     swap(blankCoords, buttonCoords, matrix);
     setPositionItems(matrix);
@@ -172,9 +153,13 @@ volume.addEventListener("click", () => {
 //Functions
 
 function createGameField() {
+  const values = new Array(matrixLength).fill(0).map((item, index) => {
+    index;
+  });
   for (let value in values) {
     const button = document.createElement("button");
     button.classList = "item";
+    button.setAttribute("draggable", true);
     button.dataset.matrixId = Number(value) + 1;
     button.innerHTML = Number(value) + 1;
     container.append(button);
@@ -182,11 +167,12 @@ function createGameField() {
 }
 
 function getMatrix(arr) {
-  const matrix = [[], [], [], []];
+  let matrix = [[], [], [], []]; //количество элементов в столбце
   let x = 0;
   let y = 0;
   for (let i = 0; i < arr.length; i++) {
-    if (x >= 4) {
+    if (x >= arrayLength) {
+      //колличество  элементов в строке
       y++;
       x = 0;
     }
@@ -243,3 +229,5 @@ function swap(coords1, coords2, matrix) {
   matrix[coords1.y][coords1.x] = matrix[coords2.y][coords2.x];
   matrix[coords2.y][coords2.x] = coords1Number;
 }
+
+export { moves, timerDiv };
