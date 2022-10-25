@@ -80,7 +80,6 @@ containerButtonSizeSelection.addEventListener("click", (event) => {
         clearInterval(int);
         [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
       }
-      int = setInterval(displayTimer, 10);
     }
   });
 });
@@ -239,12 +238,11 @@ function getMatrix(arr) {
   const matrix = [];
   for (let i = 0; i < arrayLength; i++) {
     matrix.push([]);
-  } //количество элементов в столбце
+  }
   let x = 0;
   let y = 0;
   for (let i = 0; i < arr.length; i++) {
     if (x >= arrayLength) {
-      //колличество  элементов в строке
       y++;
       x = 0;
     }
