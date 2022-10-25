@@ -25,8 +25,6 @@ function checkMatrix(matrix) {
     }
   }
   check = count + row;
-  console.log("row: ", row);
-  console.log("count: ", count);
   return check;
 }
 
