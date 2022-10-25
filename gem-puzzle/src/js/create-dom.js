@@ -86,7 +86,6 @@ function createPanelControl() {
   body.append(main);
   body.append(gameOverBackground);
   createTable();
-  console.log('localStorage.getItem("moves"): ', localStorage.getItem("moves"));
 }
 
 function createTable() {
