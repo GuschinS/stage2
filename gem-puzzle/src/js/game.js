@@ -1,4 +1,4 @@
-import { checkMatrix, check } from "./algorithm-check";
+import { checkMatrix, check, endArray } from "./algorithm-check";
 import click from "../assets/sound/click.mp3";
 import error from "../assets/sound/error.mp3";
 
@@ -242,13 +242,10 @@ container.addEventListener("click", (event) => {
     moves += 1;
     movesDiv.textContent = `Moves: ${moves}`;
     const clickItem = new Audio(click);
-    // const endArray = new Array(matrixLength).fill(0).map((item, index) => {
-    //   index;
-    // });
-    // if (JSON.stringify(endArray) == JSON.stringify(matrix.flat())) {
-    //   gameOverBackground.classList.toggle("open");
-    //   h2.textContent = `Hooray! You solved the puzzle in ${timerDiv.textContent} and ${moves} moves!`;
-    // }
+    if (JSON.stringify(endArray) == JSON.stringify(matrix.flat())) {
+      gameOverBackground.classList.toggle("open");
+      h2.textContent = `Hooray! You solved the puzzle in ${timerDiv.textContent} and ${moves} moves!`;
+    }
     if (volume.classList.value != "volume mute") {
       clickItem.play();
     }
@@ -352,14 +349,6 @@ function swap(coords1, coords2, matrix) {
   const coords1Number = matrix[coords1.y][coords1.x];
   matrix[coords1.y][coords1.x] = matrix[coords2.y][coords2.x];
   matrix[coords2.y][coords2.x] = coords1Number;
-  const endArray = new Array(matrixLength).fill(0).map((item, index) => {
-    item = index + 1;
-  });
-
-  if (JSON.stringify(endArray) == JSON.stringify(matrix.flat())) {
-    gameOverBackground.classList.toggle("open");
-    h2.textContent = `Hooray! You solved the puzzle in ${timerDiv.textContent} and ${moves} moves!`;
-  }
 }
 
 export { moves, timerDiv };
