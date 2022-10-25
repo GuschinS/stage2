@@ -1,4 +1,9 @@
-import { checkMatrix, check, endArray } from "./algorithm-check";
+import {
+  checkMatrix,
+  check,
+  endArrayFour,
+  endArrayThree,
+} from "./algorithm-check";
 import click from "../assets/sound/click.mp3";
 import error from "../assets/sound/error.mp3";
 
@@ -53,90 +58,24 @@ createGameField();
 
 containerButtonSizeSelection.addEventListener("click", (event) => {
   const itemButtonSizeSelection = event.target.closest("button");
-
   itemsButtonSizeSelection.forEach((el) => {
     el.classList.remove("active");
   });
   itemButtonSizeSelection.classList.add("active");
-  itemsButtonSizeSelection.forEach((el) => {
-    if (el.classList.value === "button-three active") {
-      matrixLength = 9;
-      arrayLength = 3;
+  itemsButtonSizeSelection.forEach((el, index) => {
+    if (el.classList.value === "active") {
+      arrayLength = index + 3;
+      matrixLength = arrayLength ** 2;
       blankNumber = matrixLength;
-
       deleteGameItem();
       createGameField();
       updateGrid();
-      if (int !== null) {
-        clearInterval(int);
-        [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+      startGame();
+      if (matrixLength % 2 != 0) {
+        while (check % 2 === 0) {
+          startGame();
+        }
       }
-      int = setInterval(displayTimer, 10);
-    }
-    if (el.classList.value === "button-four active") {
-      matrixLength = 16;
-      arrayLength = 4;
-      blankNumber = matrixLength;
-
-      deleteGameItem();
-      createGameField();
-      updateGrid();
-      if (int !== null) {
-        clearInterval(int);
-        [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
-      }
-      int = setInterval(displayTimer, 10);
-    }
-    if (el.classList.value === "button-fife active") {
-      matrixLength = 25;
-      arrayLength = 5;
-      blankNumber = matrixLength;
-
-      deleteGameItem();
-      createGameField();
-      updateGrid();
-      if (int !== null) {
-        clearInterval(int);
-        [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
-      }
-      int = setInterval(displayTimer, 10);
-    }
-    if (el.classList.value === "button-six active") {
-      matrixLength = 36;
-      arrayLength = 6;
-      blankNumber = matrixLength;
-
-      deleteGameItem();
-      createGameField();
-      updateGrid();
-      if (int !== null) {
-        clearInterval(int);
-        [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
-      }
-      int = setInterval(displayTimer, 10);
-    }
-    if (el.classList.value === "button-seven active") {
-      matrixLength = 49;
-      arrayLength = 7;
-      blankNumber = matrixLength;
-
-      deleteGameItem();
-      createGameField();
-      updateGrid();
-      if (int !== null) {
-        clearInterval(int);
-        [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
-      }
-      int = setInterval(displayTimer, 10);
-    }
-    if (el.classList.value === "button-eight active") {
-      matrixLength = 64;
-      arrayLength = 8;
-      blankNumber = matrixLength;
-
-      deleteGameItem();
-      createGameField();
-      updateGrid();
       if (int !== null) {
         clearInterval(int);
         [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
@@ -154,12 +93,14 @@ function deleteGameItem() {
 }
 function updateGrid() {
   matrix = getMatrix(itemNodes.map((item) => Number(item.dataset.matrixId)));
-  // console.log("matrix: ", matrix);
   setPositionItems(matrix);
 }
 updateGrid();
-
-// let matrix = getMatrix(items.map((item) => item.dataset.matrixId));
+function startGame() {
+  const shuffledArray = shuffleArray(matrix.flat());
+  matrix = getMatrix(shuffledArray);
+  checkMatrix(matrix);
+}
 
 setPositionItems(matrix);
 
@@ -207,14 +148,18 @@ buttonStart.addEventListener("click", () => {
     buttonStart.classList.value === "button-start start"
   ) {
     handlerStartStopReset();
-    const shuffledArray = shuffleArray(matrix.flat());
-    matrix = getMatrix(shuffledArray);
-    checkMatrix(matrix);
-    while (check % 2 != 0) {
-      const shuffledArray = shuffleArray(matrix.flat());
-      matrix = getMatrix(shuffledArray);
-      checkMatrix(matrix);
+    if (matrixLength % 2 != 0) {
+      startGame();
+      while (check % 2 === 0) {
+        startGame();
+      }
+    } else {
+      startGame();
+      while (check % 2 != 0) {
+        startGame();
+      }
     }
+
     setPositionItems(matrix);
     if (int !== null) {
       clearInterval(int);
@@ -228,8 +173,6 @@ buttonStart.addEventListener("click", () => {
   }
 });
 
-// const blankNumber = matrixLength; // пустой элемент, для каждой длинны другой
-
 container.addEventListener("click", (event) => {
   const buttonNode = event.target.closest("button");
   const buttonNumber = Number(buttonNode.dataset.matrixId);
@@ -242,10 +185,19 @@ container.addEventListener("click", (event) => {
     moves += 1;
     movesDiv.textContent = `Moves: ${moves}`;
     const clickItem = new Audio(click);
-    if (JSON.stringify(endArray) == JSON.stringify(matrix.flat())) {
-      gameOverBackground.classList.toggle("open");
-      h2.textContent = `Hooray! You solved the puzzle in ${timerDiv.textContent} and ${moves} moves!`;
+    if (matrix.flat().length === 16) {
+      if (JSON.stringify(endArrayFour) == JSON.stringify(matrix.flat())) {
+        gameOverBackground.classList.toggle("open");
+        h2.textContent = `Hooray! You solved the puzzle in ${timerDiv.textContent} and ${moves} moves!`;
+      }
     }
+    if (matrix.flat().length === 9) {
+      if (JSON.stringify(endArrayThree) == JSON.stringify(matrix.flat())) {
+        gameOverBackground.classList.toggle("open");
+        h2.textContent = `Hooray! You solved the puzzle in ${timerDiv.textContent} and ${moves} moves!`;
+      }
+    }
+
     if (volume.classList.value != "volume mute") {
       clickItem.play();
     }
@@ -351,4 +303,4 @@ function swap(coords1, coords2, matrix) {
   matrix[coords2.y][coords2.x] = coords1Number;
 }
 
-export { moves, timerDiv };
+export { moves, timerDiv, matrixLength };
