@@ -50,17 +50,12 @@ function createPanelControl() {
   buttonContainer.append(buttonStop);
   container.classList = "container";
   sizeSelection.classList = "size-selection";
-  buttonThree.classList = "button-three";
   buttonThree.textContent = `3 X 3`;
-  buttonFour.classList = "button-four active";
+  buttonFour.classList = "active";
   buttonFour.textContent = `4 X 4`;
-  buttonFife.classList = "button-fife";
   buttonFife.textContent = `5 X 5`;
-  buttonSix.classList = "button-six";
   buttonSix.textContent = `6 X 6`;
-  buttonSeven.classList = "button-seven";
   buttonSeven.textContent = `7 X 7`;
-  buttonEight.classList = "button-eight";
   buttonEight.textContent = `8 X 8`;
   popUpCloseButton.classList = "pop-up-close-button";
   save.classList = "save";
