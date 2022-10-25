@@ -11,9 +11,16 @@ const buttonStop = buttonContainer.querySelector(".button-stop");
 const gameOverBackground = document.querySelector(".game-over-background");
 const movesDiv = document.querySelector(".moves");
 const h2 = document.querySelector("h2");
+const containerButtonSizeSelection = document.querySelector(".size-selection");
+const itemsButtonSizeSelection = document.querySelectorAll(
+  ".size-selection button"
+);
 
 let matrixLength = 16;
 let arrayLength = 4;
+let blankNumber = matrixLength;
+let itemNodes = [];
+let matrix = [];
 let moves = 0;
 let int = null;
 let [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
@@ -44,8 +51,115 @@ createGameField();
 
 //Position
 
-const items = Array.from(container.querySelectorAll(".item"));
-let matrix = getMatrix(items.map((item) => item.dataset.matrixId));
+containerButtonSizeSelection.addEventListener("click", (event) => {
+  const itemButtonSizeSelection = event.target.closest("button");
+
+  itemsButtonSizeSelection.forEach((el) => {
+    el.classList.remove("active");
+  });
+  itemButtonSizeSelection.classList.add("active");
+  itemsButtonSizeSelection.forEach((el) => {
+    if (el.classList.value === "button-three active") {
+      matrixLength = 9;
+      arrayLength = 3;
+      blankNumber = matrixLength;
+
+      deleteGameItem();
+      createGameField();
+      updateGrid();
+      if (int !== null) {
+        clearInterval(int);
+        [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+      }
+      int = setInterval(displayTimer, 10);
+    }
+    if (el.classList.value === "button-four active") {
+      matrixLength = 16;
+      arrayLength = 4;
+      blankNumber = matrixLength;
+
+      deleteGameItem();
+      createGameField();
+      updateGrid();
+      if (int !== null) {
+        clearInterval(int);
+        [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+      }
+      int = setInterval(displayTimer, 10);
+    }
+    if (el.classList.value === "button-fife active") {
+      matrixLength = 25;
+      arrayLength = 5;
+      blankNumber = matrixLength;
+
+      deleteGameItem();
+      createGameField();
+      updateGrid();
+      if (int !== null) {
+        clearInterval(int);
+        [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+      }
+      int = setInterval(displayTimer, 10);
+    }
+    if (el.classList.value === "button-six active") {
+      matrixLength = 36;
+      arrayLength = 6;
+      blankNumber = matrixLength;
+
+      deleteGameItem();
+      createGameField();
+      updateGrid();
+      if (int !== null) {
+        clearInterval(int);
+        [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+      }
+      int = setInterval(displayTimer, 10);
+    }
+    if (el.classList.value === "button-seven active") {
+      matrixLength = 49;
+      arrayLength = 7;
+      blankNumber = matrixLength;
+
+      deleteGameItem();
+      createGameField();
+      updateGrid();
+      if (int !== null) {
+        clearInterval(int);
+        [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+      }
+      int = setInterval(displayTimer, 10);
+    }
+    if (el.classList.value === "button-eight active") {
+      matrixLength = 64;
+      arrayLength = 8;
+      blankNumber = matrixLength;
+
+      deleteGameItem();
+      createGameField();
+      updateGrid();
+      if (int !== null) {
+        clearInterval(int);
+        [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+      }
+      int = setInterval(displayTimer, 10);
+    }
+  });
+});
+
+function deleteGameItem() {
+  const lastGameItems = document.querySelectorAll(".item");
+  for (let i = 0; i < lastGameItems.length; i++) {
+    lastGameItems[i].remove();
+  }
+}
+function updateGrid() {
+  matrix = getMatrix(itemNodes.map((item) => Number(item.dataset.matrixId)));
+  // console.log("matrix: ", matrix);
+  setPositionItems(matrix);
+}
+updateGrid();
+
+// let matrix = getMatrix(items.map((item) => item.dataset.matrixId));
 
 setPositionItems(matrix);
 
@@ -114,7 +228,7 @@ buttonStart.addEventListener("click", () => {
   }
 });
 
-const blankNumber = matrixLength; // пустой элемент, для каждой длинны другой
+// const blankNumber = matrixLength; // пустой элемент, для каждой длинны другой
 
 container.addEventListener("click", (event) => {
   const buttonNode = event.target.closest("button");
@@ -153,21 +267,27 @@ volume.addEventListener("click", () => {
 //Functions
 
 function createGameField() {
+  itemNodes = [];
   const values = new Array(matrixLength).fill(0).map((item, index) => {
-    index;
+    index + 1;
   });
   for (let value in values) {
     const button = document.createElement("button");
     button.classList = "item";
-    button.setAttribute("draggable", true);
+    button.style.width = 100 / arrayLength + "%";
+    button.style.height = 100 / arrayLength + "%";
     button.dataset.matrixId = Number(value) + 1;
     button.innerHTML = Number(value) + 1;
-    container.append(button);
+    itemNodes.push(button);
+    container.appendChild(button);
   }
 }
 
 function getMatrix(arr) {
-  let matrix = [[], [], [], []]; //количество элементов в столбце
+  const matrix = [];
+  for (let i = 0; i < arrayLength; i++) {
+    matrix.push([]);
+  } //количество элементов в столбце
   let x = 0;
   let y = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -186,7 +306,8 @@ function setPositionItems(matrix) {
   for (let y = 0; y < matrix.length; y++) {
     for (let x = 0; x < matrix[y].length; x++) {
       const value = matrix[y][x];
-      const node = items[value - 1];
+      const node = itemNodes[value - 1];
+
       setNodeStyles(node, x, y);
     }
   }
