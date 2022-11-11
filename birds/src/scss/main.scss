@@ -90,21 +90,24 @@ ul.pagination {
     flex: 1 1;
     margin-top: 12px;
   }
-  .time-bar-bar {
+  .time-bar__input {
+    appearance: none;
+    width: 100%;
     height: 4px;
+    background-color: grey;
+    border-radius: 2px;
+    cursor: pointer;
   }
-  .time-bar-circle {
+  .time-bar__input::-webkit-slider-thumb {
+    appearance: none;
     background-color: grey;
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    position: absolute;
-    top: 0;
-    transform: translate(-50%, calc(-50% + 2px));
     box-shadow: 0 0 4px 0 rgb(0 0 0 / 20%);
     cursor: pointer;
   }
-  .time-bar-time-info {
+  .time-bar__time-info {
     margin-top: 15px;
     font-size: 11px;
     color: #d3d3d3;
@@ -125,11 +128,13 @@ ul.pagination {
   margin-right: 20px;
   margin-bottom: 12px;
   cursor: pointer;
-  svg {
-    transition: 0.2s;
-    width: 18px;
-    height: 18px;
-  }
+  background-image: url("../assets/svg/play.svg");
+  background-size: 50% 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.playback-button.pause {
+  background-image: url("../assets/svg/pause.svg");
 }
 
 .list-group-item,
