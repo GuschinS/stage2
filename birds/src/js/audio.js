@@ -1,4 +1,5 @@
 import birdsData from "./birds";
+import { level } from "./next-level";
 
 const play = document.querySelector(".playback-button");
 const progressBar = document.querySelector(".time-bar__input");
@@ -15,9 +16,13 @@ function getRandomInt() {
 }
 
 const playAudio = () => {
-  getRandomInt();
-  audio.src = birdsData[0][index].audio;
-  audio.play();
+  if (audio.currentTime == 0) {
+    getRandomInt();
+    audio.src = birdsData[level][index].audio;
+    audio.play();
+  } else {
+    audio.play();
+  }
 };
 
 const pauseAudio = () => {
@@ -35,7 +40,13 @@ const toggleBtn = () => {
   play.classList.toggle("pause");
 };
 
+const resetProgressBar = () => {
+  audio.currentTime = 0;
+  toggleBtn();
+};
+
 function updateProgressValue() {
+  audio.addEventListener("ended", resetProgressBar);
   progressBar.max = Math.floor(audio.duration);
   progressBar.value = audio.currentTime;
   current.textContent = formatTime(Math.floor(audio.currentTime));
@@ -61,12 +72,14 @@ function formatTime(seconds) {
   return `${min}:${sec}`;
 }
 
-setInterval(updateProgressValue, 500);
-
 function changeProgressBar() {
   audio.currentTime = progressBar.value;
 }
 
 progressBar.addEventListener("input", changeProgressBar);
-
 play.addEventListener("click", toggleBtn);
+play.addEventListener("click", () => {
+  setInterval(updateProgressValue, 500);
+});
+
+export { index, resetProgressBar };
