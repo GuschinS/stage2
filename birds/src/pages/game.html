@@ -37,7 +37,7 @@
       </ul>
       <div class="random-bird jumbotron rounded">
         <img class="bird-image" src="../assets/images/bird.jpg" alt="bird">
-        <div>
+        <div class="mobile">
           <ul class="list-group list-group-flush">
             <li class="list-group-item border-bottom">
               <h3 class="bird-name">******</h3>
@@ -47,7 +47,7 @@
                 <div class="controls">
                   <div class="playback-button">
                   </div>
-                  <div class="time-bar " style="position: relative;">
+                  <div class="time-bar" style="position: relative;">
                     <input type="range" class="time-bar__input" value="0">
                     <div class="time-bar__time-info">
                       <div class="current-time">00:00</div>
@@ -80,24 +80,16 @@
                 <h4></h4>
               </li>
               <li class="list-group-item species"><span>Corvus corax</span></li>
-              <li class="list-group-item" style="display: none;">
-                <div class=" audio-player"><audio
-                    src="https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3"
-                    hidden=""></audio>
-                  <div class="controls" style="">
-                    <div class="playback-button"><svg viewBox="-200 0 1200 1000">
-                        <path fill="#00bc8c"
-                          d="M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z">
-                        </path>
-                      </svg></div>
-                    <div class="timebar " style="position: relative;">
-                      <div class="timebar-bar"
-                        style="background: linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140) 0%, rgb(115, 115, 115) 0%, rgb(115, 115, 115) 100%);">
-                      </div>
-                      <div class="timebar-circle" style="left: 0%;"></div>
-                      <div class="timebar-time-info">
-                        <div>00:00</div>
-                        <div>00:12</div>
+              <li class="list-group-item">
+                <div class="audio-player">
+                  <div class="controls">
+                    <div class="playback-button">
+                    </div>
+                    <div class="time-bar" style="position: relative;">
+                      <input type="range" class="time-bar__input" value="0">
+                      <div class="time-bar__time-info">
+                        <div class="current-time">00:00</div>
+                        <div class="duration">00:00</div>
                       </div>
                     </div>
                   </div>
