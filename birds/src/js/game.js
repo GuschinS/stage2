@@ -31,7 +31,6 @@ const correct = (clickedButton) => {
   resetProgressBar();
   birdName.textContent = birdsData[level][index].name;
   btn.classList.add("next-level");
-  addedDescription();
   changeScore();
   audioCorrect.src =
     "https://birds-quiz.netlify.app/static/media/win.a1e9e8b6.mp3";
@@ -46,13 +45,13 @@ const changeScore = () => {
 
 itemList.addEventListener("click", (event) => {
   let clickedButton = event.target;
+  addedDescription(clickedButton);
   console.log("birdsData[level][index].name: ", birdsData[level][index].name);
   if (birdsData[level][index].name === clickedButton.textContent) {
     correct(clickedButton);
   } else {
     if (clickedButton.classList[0] === "list-group-item") {
       clickedButton.classList.add("error");
-      console.log("clickedButton: ", clickedButton.classList[0]);
       clickedButton.classList.add("pointer-events-none");
       count--;
       audioError.src =
@@ -62,14 +61,14 @@ itemList.addEventListener("click", (event) => {
   }
 });
 
-const addedDescription = () => {
+const addedDescription = (clickedButton) => {
   cardBody.style.display = "flex";
   birdDescription.style.display = "block";
   instruction.style.display = "none";
-  cardBodyBirdImage.src = birdsData[level][index].image;
-  h4.textContent = birdsData[level][index].name;
-  species.textContent = birdsData[level][index].species;
-  birdDescription.textContent = birdsData[level][index].description;
+  cardBodyBirdImage.src = birdsData[level][clickedButton.id].image;
+  h4.textContent = birdsData[level][clickedButton.id].name;
+  species.textContent = birdsData[level][clickedButton.id].species;
+  birdDescription.textContent = birdsData[level][clickedButton.id].description;
 };
 
 const reset = () => {
