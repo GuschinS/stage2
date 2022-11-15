@@ -15,18 +15,18 @@ const cardBodyBirdImage = document.querySelector(".card-body .bird-image");
 const h4 = document.querySelector("h4");
 const species = document.querySelector(".species");
 const birdDescription = document.querySelector(".bird-description");
-const playerPointerEventsNone = document.querySelector(".list-group-flush");
+// const playerPointerEventsNone = document.querySelector(".list-group-flush");
 let count = 5;
 let score = 0;
 const audioCorrect = new Audio();
 const audioError = new Audio();
 
-itemList.classList.add("pointer-events-none");
+// itemList.classList.add("pointer-events-none");
 
 const correct = (clickedButton) => {
   clickedButton.classList.add("correct");
-  itemList.classList.add("pointer-events-none");
-  playerPointerEventsNone.classList.add("pointer-events-none");
+  // itemList.classList.add("pointer-events-none");
+  // playerPointerEventsNone.classList.add("pointer-events-none");
   birdImage.src = birdsData[level][index].image;
   resetProgressBar();
   birdName.textContent = birdsData[level][index].name;
@@ -52,7 +52,7 @@ itemList.addEventListener("click", (event) => {
   } else {
     if (clickedButton.classList[0] === "list-group-item") {
       clickedButton.classList.add("error");
-      clickedButton.classList.add("pointer-events-none");
+      // clickedButton.classList.add("pointer-events-none");
       count--;
       audioError.src =
         "https://birds-quiz.netlify.app/static/media/error.165166d5.mp3";
@@ -75,7 +75,7 @@ const reset = () => {
   groupItem.forEach((el) => {
     el.classList.remove("correct");
     el.classList.remove("error");
-    el.classList.remove("pointer-events-none");
+    // el.classList.remove("pointer-events-none");
   });
   birdName.textContent = "******";
   birdImage.src = bird;
@@ -83,7 +83,7 @@ const reset = () => {
   instruction.style.display = "block";
   birdDescription.style.display = "none";
   btn.classList.remove("next-level");
-  playerPointerEventsNone.classList.remove("pointer-events-none");
+  // playerPointerEventsNone.classList.remove("pointer-events-none");
   count = 5;
 };
 

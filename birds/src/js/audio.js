@@ -22,7 +22,7 @@ const playAudio = () => {
     audio.src = birdsData[level][index].audio;
     console.log(birdsData[level][index].name);
     audio.play();
-    itemList.classList.remove("pointer-events-none");
+    // itemList.classList.remove("pointer-events-none");
   } else {
     audio.play();
   }
