@@ -1,4 +1,4 @@
-import { reset } from "./game";
+import { reset, next } from "./game";
 
 const nextLevel = document.querySelector(".btn");
 const levels = document.querySelectorAll(".levels .page-item");
@@ -12,6 +12,7 @@ const changeLevel = () => {
     levels[level].classList.add("active");
     reset();
   }
+  next();
 };
 
 nextLevel.addEventListener("click", changeLevel);
