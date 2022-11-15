@@ -18,6 +18,9 @@ const birdDescription = document.querySelector(".bird-description");
 const playerPointerEventsNone = document.querySelector(".list-group-flush");
 let count = 5;
 let score = 0;
+const audioCorrect = new Audio();
+const audioError = new Audio();
+
 itemList.classList.add("pointer-events-none");
 
 const correct = (clickedButton) => {
@@ -30,6 +33,9 @@ const correct = (clickedButton) => {
   btn.classList.add("next-level");
   addedDescription();
   changeScore();
+  audioCorrect.src =
+    "https://birds-quiz.netlify.app/static/media/win.a1e9e8b6.mp3";
+  audioCorrect.play();
 };
 
 const changeScore = () => {
@@ -49,7 +55,9 @@ itemList.addEventListener("click", (event) => {
       console.log("clickedButton: ", clickedButton.classList[0]);
       clickedButton.classList.add("pointer-events-none");
       count--;
-      console.log("count: ", count);
+      audioError.src =
+        "https://birds-quiz.netlify.app/static/media/error.165166d5.mp3";
+      audioError.play();
     }
   }
 });
