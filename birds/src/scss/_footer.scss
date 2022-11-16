@@ -1,0 +1,19 @@
+footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 5rem;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    a {
+        color: white;
+    }
+}
+
+.rs img {
+    width: 25%;
+}
