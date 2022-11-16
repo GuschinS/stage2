@@ -1,5 +1,7 @@
 @import "./normalize";
 @import "./header";
+@import "./pop-up-score";
+@import "./footer";
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -54,9 +56,10 @@ ul.pagination {
     border-color: #007c5d;
   }
 }
-// .pointer-events-none {
-//   pointer-events: none;
-// }
+
+.pointer-events-none {
+  pointer-events: none;
+}
 
 .random-bird {
   display: flex;
