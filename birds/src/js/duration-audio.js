@@ -1,29 +1,14 @@
-import birdsData from "./birds";
-import { level } from "./next-level";
+import { audio } from "./game";
 
-const play = document.querySelector(".playback-button");
-const progressBar = document.querySelector(".time-bar__input");
-const durationTime = document.querySelector(".duration");
-const current = document.querySelector(".current-time");
+const play = document.querySelector(".card-body .playback-button");
+const progressBar = document.querySelector(".card-body .time-bar__input");
+const durationTime = document.querySelector(".card-body .duration");
+const current = document.querySelector(".card-body .current-time");
 
 let isPlay = false;
-let index = 0;
-const audio = new Audio();
-
-function getRandomInt() {
-  index = Math.floor(Math.random() * 5);
-  return index;
-}
 
 const playAudio = () => {
-  if (audio.currentTime == 0) {
-    getRandomInt();
-    audio.src = birdsData[level][index].audio;
-    console.log(birdsData[level][index].name);
-    audio.play();
-  } else {
-    audio.play();
-  }
+  audio.play();
 };
 
 const pauseAudio = () => {
@@ -85,4 +70,3 @@ if (play) {
     setInterval(updateProgressValue, 500);
   });
 }
-export { index, resetProgressBar };

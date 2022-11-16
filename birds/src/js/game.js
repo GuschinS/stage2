@@ -15,18 +15,18 @@ const cardBodyBirdImage = document.querySelector(".card-body .bird-image");
 const h4 = document.querySelector("h4");
 const species = document.querySelector(".species");
 const birdDescription = document.querySelector(".bird-description");
-// const playerPointerEventsNone = document.querySelector(".list-group-flush");
+const audioPlayer = document.querySelector(".audio-player");
+const popupBackground = document.querySelector(".score-background");
+
+const audio = new Audio();
 let count = 5;
 let score = 0;
 const audioCorrect = new Audio();
 const audioError = new Audio();
 
-// itemList.classList.add("pointer-events-none");
-
 const correct = (clickedButton) => {
   clickedButton.classList.add("correct");
-  // itemList.classList.add("pointer-events-none");
-  // playerPointerEventsNone.classList.add("pointer-events-none");
+  audioPlayer.classList.add("pointer-events-none");
   birdImage.src = birdsData[level][index].image;
   resetProgressBar();
   birdName.textContent = birdsData[level][index].name;
@@ -35,31 +35,37 @@ const correct = (clickedButton) => {
   audioCorrect.src =
     "https://birds-quiz.netlify.app/static/media/win.a1e9e8b6.mp3";
   audioCorrect.play();
+  if (level == 5) {
+    popupBackground.style.display = "block";
+  }
 };
 
 const changeScore = () => {
-  const scoreText = document.querySelector(".score__text");
+  const scoreText = document.querySelectorAll(".score__text");
   score += count;
-  scoreText.textContent = `Score: ${score}`;
+  scoreText.forEach((el) => {
+    el.textContent = `Score: ${score}`;
+  });
+  localStorage.setItem("score", score);
 };
 
-itemList.addEventListener("click", (event) => {
-  let clickedButton = event.target;
-  addedDescription(clickedButton);
-  console.log("birdsData[level][index].name: ", birdsData[level][index].name);
-  if (birdsData[level][index].name === clickedButton.textContent) {
-    correct(clickedButton);
-  } else {
-    if (clickedButton.classList[0] === "list-group-item") {
-      clickedButton.classList.add("error");
-      // clickedButton.classList.add("pointer-events-none");
-      count--;
-      audioError.src =
-        "https://birds-quiz.netlify.app/static/media/error.165166d5.mp3";
-      audioError.play();
+if (itemList) {
+  itemList.addEventListener("click", (event) => {
+    let clickedButton = event.target;
+    addedDescription(clickedButton);
+    if (birdsData[level][index].name === clickedButton.textContent) {
+      correct(clickedButton);
+    } else {
+      if (clickedButton.classList[0] === "list-group-item") {
+        clickedButton.classList.add("error");
+        count--;
+        audioError.src =
+          "https://birds-quiz.netlify.app/static/media/error.165166d5.mp3";
+        audioError.play();
+      }
     }
-  }
-});
+  });
+}
 
 const addedDescription = (clickedButton) => {
   cardBody.style.display = "flex";
@@ -69,13 +75,13 @@ const addedDescription = (clickedButton) => {
   h4.textContent = birdsData[level][clickedButton.id].name;
   species.textContent = birdsData[level][clickedButton.id].species;
   birdDescription.textContent = birdsData[level][clickedButton.id].description;
+  audio.src = birdsData[level][clickedButton.id].audio;
 };
 
 const reset = () => {
   groupItem.forEach((el) => {
     el.classList.remove("correct");
     el.classList.remove("error");
-    // el.classList.remove("pointer-events-none");
   });
   birdName.textContent = "******";
   birdImage.src = bird;
@@ -83,7 +89,7 @@ const reset = () => {
   instruction.style.display = "block";
   birdDescription.style.display = "none";
   btn.classList.remove("next-level");
-  // playerPointerEventsNone.classList.remove("pointer-events-none");
+  audioPlayer.classList.remove("pointer-events-none");
   count = 5;
 };
 
@@ -97,4 +103,4 @@ const next = () => {
 
 next();
 
-export { reset, next };
+export { reset, next, audio };

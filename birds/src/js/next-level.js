@@ -14,7 +14,8 @@ const changeLevel = () => {
   }
   next();
 };
-
-nextLevel.addEventListener("click", changeLevel);
+if (nextLevel) {
+  nextLevel.addEventListener("click", changeLevel);
+}
 
 export { level };
