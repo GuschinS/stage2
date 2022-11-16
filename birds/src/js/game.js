@@ -17,10 +17,8 @@ const species = document.querySelector(".species");
 const birdDescription = document.querySelector(".bird-description");
 const audioPlayer = document.querySelector(".audio-player");
 const popupBackground = document.querySelector(".score-background");
-const play = document.querySelector(".card-body .playback-button");
 
 const audio = new Audio();
-
 let count = 5;
 let score = 0;
 const audioCorrect = new Audio();
@@ -48,12 +46,13 @@ const changeScore = () => {
   scoreText.forEach((el) => {
     el.textContent = `Score: ${score}`;
   });
+  localStorage.setItem("score", score);
 };
+
 if (itemList) {
   itemList.addEventListener("click", (event) => {
     let clickedButton = event.target;
     addedDescription(clickedButton);
-    console.log("birdsData[level][index].name: ", birdsData[level][index].name);
     if (birdsData[level][index].name === clickedButton.textContent) {
       correct(clickedButton);
     } else {
