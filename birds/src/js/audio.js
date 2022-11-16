@@ -5,7 +5,6 @@ const play = document.querySelector(".playback-button");
 const progressBar = document.querySelector(".time-bar__input");
 const durationTime = document.querySelector(".duration");
 const current = document.querySelector(".current-time");
-const itemList = document.querySelector(".item-list");
 
 let isPlay = false;
 let index = 0;
@@ -22,7 +21,6 @@ const playAudio = () => {
     audio.src = birdsData[level][index].audio;
     console.log(birdsData[level][index].name);
     audio.play();
-    // itemList.classList.remove("pointer-events-none");
   } else {
     audio.play();
   }
@@ -78,11 +76,13 @@ function formatTime(seconds) {
 function changeProgressBar() {
   audio.currentTime = progressBar.value;
 }
-
-progressBar.addEventListener("input", changeProgressBar);
-play.addEventListener("click", toggleBtn);
-play.addEventListener("click", () => {
-  setInterval(updateProgressValue, 500);
-});
-
+if (progressBar) {
+  progressBar.addEventListener("input", changeProgressBar);
+}
+if (play) {
+  play.addEventListener("click", toggleBtn);
+  play.addEventListener("click", () => {
+    setInterval(updateProgressValue, 500);
+  });
+}
 export { index, resetProgressBar };
