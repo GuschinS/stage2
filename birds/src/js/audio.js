@@ -99,8 +99,11 @@ const toggleVolume = () => {
 const soundVolumeControl = () => {
   audio.volume = soundVolume.value;
 };
-
-volumeIcon.addEventListener("click", toggleVolume);
-soundVolume.addEventListener("input", soundVolumeControl);
+if (volumeIcon) {
+  volumeIcon.addEventListener("click", toggleVolume);
+}
+if (soundVolume) {
+  soundVolume.addEventListener("input", soundVolumeControl);
+}
 
 export { index, resetProgressBar };

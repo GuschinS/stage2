@@ -90,7 +90,9 @@ ul.pagination {
   width: calc(100% - 240px);
   margin: 0;
 }
-
+.list-group-item.audio-control {
+  padding: 0.85rem 0;
+}
 .audio-player {
   margin: 10px 40px 8px 0;
   width: 100%;
