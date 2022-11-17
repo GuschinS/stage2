@@ -28,14 +28,7 @@
   </header>
   <main>
     <div class="main-container">
-      <ul class="pagination levels">
-        <li class="page-item active"><a class="page-link" href="/#">Разминка</a></li>
-        <li class="page-item"><a class="page-link" href="/#">Воробьиные</a></li>
-        <li class="page-item"><a class="page-link" href="/#">Лесные птицы</a></li>
-        <li class="page-item"><a class="page-link" href="/#">Певчие птицы</a></li>
-        <li class="page-item"><a class="page-link" href="/#">Хищные птицы</a></li>
-        <li class="page-item"><a class="page-link" href="/#">Морские птицы</a></li>
-      </ul>
+      <div class="level"></div>
       <div class="random-bird jumbotron rounded">
         <img class="bird-image" src="../assets/images/bird.jpg" alt="bird">
         <div class="mobile">
@@ -47,7 +40,7 @@
               <div class="audio-player"></audio>
                 <div class="controls">
                   <div class="volume-control">
-                    <div class="volume-icon icono-volumeHigh"></div>
+                    <div class="volume-icon volume-on"></div>
                     <input id="sound-volume" type="range" min="0" max="1" step="0.01">
                   </div>
                   <div class="playback-button">
@@ -75,9 +68,7 @@
           <li id="5" class="list-group-item"></li>
         </ul>
         <div class="bird-details card">
-          <p class="instruction" style="display: block;"><span>Послушайте плеер.</span><span>Выберите птицу из
-              списка</span>
-          </p>
+          <p class="instruction" style="display: block;">Listen to the player. Select a bird from the list.</p>
           <div class="card-body" style="display: none;"><img class="bird-image" src="../assets/images/bird.jpg"
               alt="bird">
             <ul class="list-group list-group-flush">

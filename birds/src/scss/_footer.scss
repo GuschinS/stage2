@@ -2,11 +2,11 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: auto;
     height: 5rem;
-    background-color: #222;
+    background-color: $color-primary;
     color: white;
     text-align: center;
     a {

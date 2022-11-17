@@ -5,12 +5,12 @@
 }
 
 .header-score {
-    margin: 0;
+    width: 100%;
 }
 
 .main-score {
     flex: 1;
-    margin: 0;
+    width: 100%;
 }
 
 .table-wrapper {
@@ -22,10 +22,12 @@
     .table {
         text-align: center;
         width: 70%;
+        margin-top: 50px;
         th,
         tr,
         td {
-            border: solid 1px white;
+            border: solid 1px $color-primary-light;
+            padding: 1rem;
         }
     }
 }

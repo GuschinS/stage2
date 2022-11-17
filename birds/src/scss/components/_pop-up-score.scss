@@ -32,20 +32,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #222;
+    background-color: $color-primary;
     border: solid 2px transparent;
     border-radius: 20px;
+    form {
+        width: 100%;
+        text-align: center;
+    }
     .new-game,
     .score__button {
-        width: 120px;
+        width: 80%;
         height: 40px;
         color: white;
-        background-color: #008966;
-        border: solid 1px #007c5d;
+        background-color: $color-secondary;
+        border: solid 1px $color-secondary;
         border-radius: 5px;
         margin-bottom: 20px;
         &:hover {
-            background-color: #00bc8c;
+            background-color: $color-primary;
         }
     }
 }
