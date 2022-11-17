@@ -1,4 +1,5 @@
-import birdsData from "./birds";
+import birdsDataRu from "./birds";
+import birdsDataEn from "./birds-en";
 import bird from "../assets/images/bird.jpg";
 
 import { index, resetProgressBar } from "./audio";
@@ -17,12 +18,53 @@ const species = document.querySelector(".species");
 const birdDescription = document.querySelector(".bird-description");
 const audioPlayer = document.querySelector(".audio-player");
 const popupBackground = document.querySelector(".score-background");
+const spanLevel = document.querySelector(".level");
+const levelEn = [
+  "Training",
+  "Old World sparrow",
+  "Forest birds",
+  "Songbirds",
+  "Bird of prey",
+  "Seabird",
+];
+const levelRu = [
+  "Разминка",
+  "Воробьиные",
+  "Лесные птицы",
+  "Певчие птицы",
+  "Хищные птицы",
+  "Морские птицы",
+];
+let arrayLevels;
 
 const audio = new Audio();
 let count = 5;
 let score = 0;
+let birdsData;
 const audioCorrect = new Audio();
 const audioError = new Audio();
+
+const changeLanguage = () => {
+  if (
+    !localStorage.getItem("selectedLanguage") ||
+    localStorage.getItem("selectedLanguage") === "en"
+  ) {
+    birdsData = birdsDataEn;
+    arrayLevels = levelEn;
+    if (instruction) {
+      instruction.textContent =
+        "Listen to the player. Select a bird from the list.";
+    }
+  } else if (localStorage.getItem("selectedLanguage") === "ua") {
+    birdsData = birdsDataRu;
+    arrayLevels = levelRu;
+    if (instruction) {
+      instruction.textContent = "Послушайте плеер. Выберите птицу из списка";
+    }
+  }
+};
+
+changeLanguage();
 
 const correct = (clickedButton) => {
   clickedButton.classList.add("correct");
@@ -94,6 +136,9 @@ const reset = () => {
 };
 
 const next = () => {
+  if (spanLevel) {
+    spanLevel.textContent = arrayLevels[level];
+  }
   let index = 0;
   groupItem.forEach((el) => {
     el.innerHTML = `<span class="li-btn"></span>${birdsData[level][index].name}`;
