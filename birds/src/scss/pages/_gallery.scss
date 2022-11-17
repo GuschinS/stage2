@@ -1,0 +1,31 @@
+.splide {
+    min-height: calc(100vh - 205px);
+    .splide__list {
+    }
+    .splide__pagination {
+        bottom: 3em;
+    }
+}
+
+.splide__slide {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 70px;
+
+    .splide__text {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .splide__slide {
+        display: block;
+        text-align: center;
+        .splide__text {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+}

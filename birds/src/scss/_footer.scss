@@ -1,16 +1,21 @@
 footer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    width: auto;
+    max-width: 1200px;
     height: 5rem;
-    background-color: $color-primary;
-    color: white;
-    text-align: center;
+    margin: 0 auto;
+    .footer-wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-top: 2em;
+        margin: 0 auto;
+        background-color: $color-primary;
+        color: $color-light;
+        text-align: center;
+    }
     a {
-        color: white;
+        color: $color-light;
     }
 }
 

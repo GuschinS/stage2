@@ -29,11 +29,20 @@ nav {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 950px) {
   .header-container {
     flex-direction: column;
   }
   nav {
     width: 80%;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  // .header-container {
+  //   flex-direction: column;
+  // }
+  nav {
+    width: 100%;
   }
 }

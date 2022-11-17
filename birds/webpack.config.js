@@ -38,6 +38,10 @@ module.exports = {
       template: "./src/pages/score.html",
       filename: "./score.html",
     }),
+    new HtmlWebPackPlugin({
+      template: "./src/pages/gallery.html",
+      filename: "./gallery.html",
+    }),
   ],
   module: {
     rules: [
