@@ -11,7 +11,7 @@ let index = 0;
 const audio = new Audio();
 
 function getRandomInt() {
-  index = Math.floor(Math.random() * 5);
+  index = Math.floor(Math.random() * 6);
   return index;
 }
 
@@ -52,11 +52,11 @@ function updateProgressValue() {
   progressBar.value = audio.currentTime;
   current.textContent = formatTime(Math.floor(audio.currentTime));
   progressBar.style.background =
-    "linear-gradient(to right, #007c5d 0%, #007c5d " +
+    "linear-gradient(to right, #002854 0%, #002854 " +
     (progressBar.value * 100) / progressBar.max +
-    "%, grey " +
+    "%, #fff " +
     (progressBar.value * 100) / progressBar.max +
-    "%, grey 100%)";
+    "%, #fff 100%)";
   if (isNaN(audio.duration)) {
     durationTime.textContent = "00:00";
   } else {
@@ -92,8 +92,8 @@ const volumeIcon = document.querySelector(".volume-icon");
 const soundVolume = document.getElementById("sound-volume");
 
 const toggleVolume = () => {
-  volumeIcon.classList.toggle("icono-volumeMute");
-  volumeIcon.classList.toggle("icono-volumeHigh");
+  volumeIcon.classList.toggle("volume-on");
+  volumeIcon.classList.toggle("volume-off");
   audio.muted === false ? (audio.muted = true) : (audio.muted = false);
 };
 const soundVolumeControl = () => {
