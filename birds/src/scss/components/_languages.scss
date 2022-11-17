@@ -1,0 +1,29 @@
+.languages {
+  display: flex;
+  margin: 50px auto;
+  justify-content: space-evenly;
+  width: 60%;
+  margin: 50px auto 20px;
+}
+
+.language {
+  display: flex;
+  width: 152px;
+  height: 92px;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.ua {
+  background-image: url(../assets/svg/ua.svg);
+}
+
+.en {
+  background-image: url(../assets/svg/en.svg);
+}
+
+.selected {
+  opacity: 1;
+}
