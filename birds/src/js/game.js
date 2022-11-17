@@ -148,4 +148,4 @@ const next = () => {
 
 next();
 
-export { reset, next, audio };
+export { reset, next, audio, birdsData };

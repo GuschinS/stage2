@@ -1,4 +1,5 @@
 import "./scss/main.scss";
+import "@splidejs/splide/css";
 import "./js/language";
 import "./js/game";
 import "./js/audio";
