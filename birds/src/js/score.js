@@ -4,7 +4,14 @@ const table = document.querySelector("table");
 const createdTable = () => {
   const tr = document.createElement("tr");
   const tdNumber = document.createElement("td");
-  tdNumber.textContent = "Твой результат";
+  if (localStorage.getItem("selectedLanguage") === "ua") {
+    tdNumber.textContent = "Твой результат";
+  } else if (
+    !localStorage.getItem("selectedLanguage") ||
+    localStorage.getItem("selectedLanguage") === "en"
+  ) {
+    tdNumber.textContent = "Your result";
+  }
   const tdScore = document.createElement("td");
   tdScore.textContent = localStorage.getItem("score");
   tr.append(tdNumber);

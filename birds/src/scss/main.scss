@@ -28,7 +28,7 @@ main {
 .main-container {
   width: 90%;
   margin: 0 auto;
-  min-height: calc(100vh - 180px);
+  min-height: calc(100vh - 210px);
   .page-link {
     pointer-events: none;
   }
@@ -62,6 +62,10 @@ ul.pagination {
     line-height: 1.25;
     color: $color-light;
     text-transform: uppercase;
+    transition: 0.5s;
+    &:hover {
+      color: $color-secondary;
+    }
   }
   .active .page-link {
     background-color: $color-primary-light;
@@ -127,9 +131,11 @@ ul.pagination {
     li {
       padding: 0.85rem 1.25rem;
       border-bottom: 1px solid $color-primary;
+      transition: 0.5s;
     }
     li:hover {
-      background-color: $color-primary-light;
+      transition: 0.5s;
+      background-color: $color-primary;
       cursor: pointer;
     }
     li:first-child {
