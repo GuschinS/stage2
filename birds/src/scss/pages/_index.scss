@@ -27,6 +27,11 @@
     height: 380px;
     background-repeat: no-repeat;
     background-image: url(../assets/svg/main-bird.svg);
+    transition: transform 3s;
+    &:hover {
+        transform: scale(1.2);
+        transition: transform 2s;
+    }
 }
 
 @media screen and (max-width: 630px) {
