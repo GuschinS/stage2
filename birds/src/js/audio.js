@@ -106,4 +106,4 @@ if (soundVolume) {
   soundVolume.addEventListener("input", soundVolumeControl);
 }
 
-export { index, resetProgressBar };
+export { index, resetProgressBar, isPlay };

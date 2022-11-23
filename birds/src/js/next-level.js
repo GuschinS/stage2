@@ -5,6 +5,11 @@ let level = 0;
 
 const changeLevel = () => {
   if (nextLevel.classList.value === "btn next-level") {
+    const popupBackground = document.querySelector(".score-background");
+
+    if (level == 5) {
+      popupBackground.style.display = "block";
+    }
     level += 1;
     reset();
   }
