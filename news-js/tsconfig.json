@@ -1,0 +1,17 @@
+{
+  // настройки строгости
+  "extends": "./tsconfig-checks.json",
+  "compilerOptions": {
+    // все остальные настройки
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    "moduleResolution": "node",
+    // "allowSyntheticDefaultImports" : true,
+    // "esModuleInterop" : true,
+  }
+}
