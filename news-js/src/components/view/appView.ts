@@ -1,5 +1,18 @@
-import News from './news/news';
-import Sources from './sources/sources';
+import { News, Article } from './news/news';
+import { Sources, Source } from './sources/sources';
+
+interface SourcesResponse {
+    status: 'ok' | 'error';
+    sources: Source[];
+}
+
+interface EverythingResponse {
+    status: string;
+    totalResults: number;
+    articles: Article[];
+}
+
+type ServerResponse = SourcesResponse | EverythingResponse;
 
 export class AppView {
     news: News;
@@ -9,14 +22,18 @@ export class AppView {
         this.sources = new Sources();
     }
 
-    drawNews(data: { articles: any }) {
-        const values = data?.articles ? data?.articles : [];
-        this.news.draw(values);
+    drawNews(data: ServerResponse) {
+        if ('articles' in data) {
+            const values = data?.articles ? data?.articles : [];
+            this.news.draw(values);
+        }
     }
 
-    drawSources(data: { sources: any }) {
-        const values = data?.sources ? data?.sources : [];
-        this.sources.draw(values);
+    drawSources(data: ServerResponse) {
+        if ('sources' in data) {
+            const values = data?.sources ? data?.sources : [];
+            this.sources.draw(values);
+        }
     }
 }
 
