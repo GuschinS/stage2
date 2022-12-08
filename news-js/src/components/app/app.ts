@@ -1,18 +1,22 @@
-// import AppController from '../controller/controller';
-// import { AppView } from '../view/appView';
+import AppController from '../controller/controller';
+import { AppView } from '../view/appView';
 
-// class App {
-//     constructor() {
-//         this.controller = new AppController();
-//         this.view = new AppView();
-//     }
+class App {
+    controller: AppController;
+    view: AppView;
 
-//     start() {
-//         document
-//             .querySelector('.sources')
-//             .addEventListener('click', (e) => this.controller.getNews(e, (data) => this.view.drawNews(data)));
-//         this.controller.getSources((data) => this.view.drawSources(data));
-//     }
-// }
+    constructor() {
+        this.controller = new AppController();
+        this.view = new AppView();
+        console.log('view: ', this.view);
+    }
 
-// export default App;
+    start() {
+        document
+            .querySelector('.sources')
+            .addEventListener('click', (e) => this.controller.getNews(e, (data) => this.view.drawNews(data)));
+        this.controller.getSources((data) => this.view.drawSources(data));
+    }
+}
+
+export default App;
