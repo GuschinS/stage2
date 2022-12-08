@@ -33,6 +33,3 @@ footer .copyright a:hover {
 footer .copyright:before {
     content: '©';
 }
-.test {
-    text-align: center;
-}
