@@ -10,7 +10,8 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "skipLibCheck": true,
-        "outDir": "./lib"
+        "outDir": "./lib",
+        "lib": ["dom"]
     },
     "include": ["./src"]
 }
