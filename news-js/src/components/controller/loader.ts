@@ -34,7 +34,7 @@ class Loader {
         this.load('GET', endpoint, callback, options);
     }
 
-    errorHandler(res: { ok: any; status: number; statusText: string | undefined }) {
+    errorHandler(res: { [x: string]: any; ok: any; status: number; statusText: string | undefined }) {
         if (!res.ok) {
             if (res.status === 401 || res.status === 404)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
