@@ -4,15 +4,17 @@ import { Sources, Source } from './sources/sources';
 interface SourcesResponse {
     status: 'ok' | 'error';
     sources: Source[];
-}
-
-interface EverythingResponse {
-    status: string;
-    totalResults: number;
     articles: Article[];
 }
 
-type ServerResponse = SourcesResponse | EverythingResponse;
+// interface EverythingResponse {
+//     status: string;
+//     totalResults: number;
+//     articles: Article[];
+// }
+
+type ServerResponse = SourcesResponse;
+// | EverythingResponse;
 
 export class AppView {
     news: News;

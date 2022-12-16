@@ -8,7 +8,6 @@ class App {
     constructor() {
         this.controller = new AppController();
         this.view = new AppView();
-        console.log('view: ', this.view);
     }
 
     start() {

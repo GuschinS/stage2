@@ -1,13 +1,32 @@
+interface SourcesOptions {
+    apiKey?: string;
+    category?: string;
+    language?: string;
+    country?: string;
+    q?: string;
+    searchIn?: string;
+    sources?: string;
+    domains?: string;
+    excludeDomains?: string;
+    from?: string;
+    to?: string;
+    sortBy?: string;
+    pageSize?: number;
+    page?: number;
+}
+type RequestOptions = SourcesOptions;
+// | EverythingOptions;
+
 class Loader {
-    baseLink: any;
-    options: any;
-    constructor(baseLink: any, options: any) {
+    baseLink: string;
+    options: RequestOptions;
+    constructor(baseLink: string, options: RequestOptions) {
         this.baseLink = baseLink;
         this.options = options;
     }
 
     getResp(
-        { endpoint, options = {} },
+        { endpoint, options = {} }: { endpoint: string; options?: RequestOptions },
         callback = () => {
             console.error('No callback for GET response');
         }
@@ -25,23 +44,23 @@ class Loader {
         return res;
     }
 
-    makeUrl(options: {}, endpoint: any) {
+    makeUrl(options: RequestOptions, endpoint: string) {
         const urlOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
         Object.keys(urlOptions).forEach((key) => {
-            url += `${key}=${urlOptions[key]}&`;
+            url += `${key}=${urlOptions[key as keyof RequestOptions]}&`;
         });
 
         return url.slice(0, -1);
     }
 
-    load(method: string, endpoint: any, callback: { (): void; (arg0: any): any }, options = {}) {
+    load(method: string, endpoint: string, callback: any, options: RequestOptions = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
-            .then((res: { json: () => any }) => res.json())
-            .then((data: any) => callback(data))
-            .catch((err: any) => console.error(err));
+            .then((res) => res.json())
+            .then((data) => callback(data))
+            .catch((err) => console.error(err));
     }
 }
 
