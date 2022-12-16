@@ -1,15 +1,17 @@
 {
-    // настройки строгости
-    "extends": "./tsconfig-checks.json",
     "compilerOptions": {
-        // все остальные настройки
-        "outDir": "./dist/",
         "sourceMap": true,
         "noImplicitAny": true,
         "target": "ES5",
-        "module": "ES2015",
-        // "jsx": "react",
+        "module": "commonjs",
         "allowJs": true,
-        "moduleResolution": "node"
-    }
+        "moduleResolution": "node",
+        "strict": false,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "outDir": "./lib",
+        "lib": ["dom"]
+    },
+    "include": ["./src"]
 }
