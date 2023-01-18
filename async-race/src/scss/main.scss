@@ -1,0 +1,30 @@
+.garage {
+  background-color: rgb(100, 100, 100);
+  .playground {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .car {
+    width: 95%;
+    margin: 0 auto;
+    border-bottom: solid 1px #fff;
+  }
+  .car-icon {
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-image: url(../assets/car.svg);
+    mask-image: url(../assets/car.svg);
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+  }
+  .finish-flag {
+    background-image: url(../assets/finish-flag.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    margin-right: 2em;
+  }
+}
