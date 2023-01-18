@@ -1,10 +1,7 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const baseConfig = {
