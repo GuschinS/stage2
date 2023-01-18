@@ -7,14 +7,7 @@ interface SourcesResponse {
     articles: Article[];
 }
 
-// interface EverythingResponse {
-//     status: string;
-//     totalResults: number;
-//     articles: Article[];
-// }
-
 type ServerResponse = SourcesResponse;
-// | EverythingResponse;
 
 export class AppView {
     news: News;
@@ -39,4 +32,4 @@ export class AppView {
     }
 }
 
-export default AppView;
+export { SourcesResponse };

@@ -1,3 +1,5 @@
+import { SourcesResponse } from '../view/appView';
+
 interface SourcesOptions {
     apiKey?: string;
     category?: string;
@@ -15,7 +17,6 @@ interface SourcesOptions {
     page?: number;
 }
 type RequestOptions = SourcesOptions;
-// | EverythingOptions;
 
 class Loader {
     baseLink: string;
@@ -27,14 +28,14 @@ class Loader {
 
     getResp(
         { endpoint, options = {} }: { endpoint: string; options?: RequestOptions },
-        callback = () => {
-            console.error('No callback for GET response');
+        callback = (data: SourcesResponse) => {
+            console.error('No callback for GET response', data);
         }
     ) {
         this.load('GET', endpoint, callback, options);
     }
 
-    errorHandler(res: { [x: string]: any; ok: any; status: number; statusText: string | undefined }) {
+    errorHandler(res: Response) {
         if (!res.ok) {
             if (res.status === 401 || res.status === 404)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
@@ -55,7 +56,7 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load(method: string, endpoint: string, callback: any, options: RequestOptions = {}) {
+    load(method: string, endpoint: string, callback: { (data: SourcesResponse): void }, options: RequestOptions = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
