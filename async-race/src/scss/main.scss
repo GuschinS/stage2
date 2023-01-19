@@ -1,8 +1,61 @@
-.garage {
+#root {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: rgb(100, 100, 100);
+  color: #fff;
+}
+button {
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .nav-list {
+    display: flex;
+    .nav-item {
+      margin-left: 1em;
+    }
+    .btn {
+      padding: 0.5em 1em;
+    }
+  }
+}
+li {
+  list-style-type: none;
+}
+.garage {
+  .btn,
+  .name-input {
+    padding: 0.5em 1em;
+    margin-right: 0.5em;
+  }
+  .create-btn,
+  .update-btn {
+    width: 8em;
+  }
+  .garage__playground {
+    padding-left: 2em;
+  }
+  ul {
+    padding-left: 0;
+  }
+  .garage__settings {
+    padding-left: 2em;
+    & > div {
+      display: flex;
+      justify-content: flex-end;
+      margin: 0.5em;
+    }
+    .color-input {
+      height: 33px;
+      margin-right: 0.5em;
+    }
+  }
   .playground {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
   }
   .car {
@@ -11,11 +64,8 @@
     border-bottom: solid 1px #fff;
   }
   .car-icon {
-    -webkit-mask-size: cover;
     mask-size: cover;
-    -webkit-mask-image: url(../assets/car.svg);
     mask-image: url(../assets/car.svg);
-    display: inline-block;
     width: 200px;
     height: 100px;
   }
@@ -23,8 +73,24 @@
     background-image: url(../assets/finish-flag.png);
     background-size: 100%;
     background-repeat: no-repeat;
-    width: 100px;
-    height: 100px;
-    margin-right: 2em;
+    width: 50px;
+    height: 50px;
+    margin-right: 10%;
+  }
+  @media screen and (max-width: 600px) {
+    .car-icon {
+      width: 100px;
+      height: 50px;
+    }
+  }
+}
+.winners {
+  .car-icon {
+    mask-size: cover;
+    mask-image: url(../assets/car.svg);
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    padding-bottom: 10px;
   }
 }
