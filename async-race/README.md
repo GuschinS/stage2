@@ -1,4 +1,4 @@
-## 1. Clone and start Back-End: [Async-race-api](https://github.com/mikhama/async-race-api)
+## 1. Clone and start Back-End: [Async-race-api](https://github.com/GuschinS/async-race-api.git)
 ## 2. Setup and Running Front-End
  - Use node 14.x or higher.
  - Clone this repo: $ git clone https://github.com/GuschinS/stage2.git.
