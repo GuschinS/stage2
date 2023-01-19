@@ -1,6 +1,5 @@
 import Garage from "./Garage";
-// import Winners from "../winners/Winners";
-// import "./main.css";
+import Winners from "./Winners";
 
 class Main {
   constructor(props) {
@@ -13,6 +12,9 @@ class Main {
     if (this.props.section === "garage") {
       const garage = new Garage(this.props);
       main.appendChild(garage.render());
+    } else {
+      const winners = new Winners(this.props);
+      main.appendChild(await winners.render());
     }
 
     return main;
