@@ -29,23 +29,21 @@ function template(props) {
 
     return result;
   }
-  return `<div class="garage__playground">
-  <h2>Garage (${props.totalCars} cars):</h2>
+  return `<h2>Garage (${props.totalCars} cars):</h2>
   <ul class="cars">
     ${getCar()}
   </ul>
   <div class="pagination">
-    <button class="btn-prev""
+    <button class="btn-prev"
     ${props.page === 1 ? "disabled" : ""} >
       <span class="prev">prev</span>
     </button>
     <span class="page">${props.page}/${props.totalPages()}</span>
-    <button class="btn-next""
+    <button class="btn-next"
     ${props.page >= props.totalPages() ? "disabled" : ""}>
       <span class="next">next</span>
     </button>
-  </div>
-</div>`;
+  </div>`;
 }
 
 export default template;
