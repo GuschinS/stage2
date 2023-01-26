@@ -7,3 +7,4 @@
  - Install dependencies: $ npm install.
  - Start server: $ npm start.
  - Now you can send requests to the address: http://127.0.0.1:8080.
+ - or open link https://guschins.github.io/stage2/async-race/dist/
